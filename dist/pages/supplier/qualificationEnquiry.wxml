@@ -1,5 +1,0 @@
-
-  <view class="container _cc29962">
-    <view class="title _cc29962">商品营业执照</view>
-    <image class="thumb _cc29962" mode="widthFix"  wx:for="{{images}}" wx:key="self" src="{{item}}"/>
-  </view>
