@@ -1,0 +1,31 @@
+
+  <view class="container _7d3cd96">
+    
+  <view class="container _83fc102 _7d3cd96" wx:if="{{isSupplier}}">
+  </view>
+    
+  <view class="container _e4eaefe _7d3cd96" wx:else>
+    <view class="emptyView _e4eaefe"  wx:if="{{$smartOrder$false}}">
+      <image class="icon _e4eaefe" mode="widthFix" src="../../images/img_dd_empty.png"/>
+      <view class="text _e4eaefe">暂无智慧订货~</view>
+    </view>
+    <view class="normalView _e4eaefe"  wx:else>
+      <view class="orderListItem _e4eaefe" wx:for="{{10}}" wx:key="self" bindtap="$smartOrder$toDetail" data-wpytodetail-a="">
+        <view class="itemHeader _e4eaefe">
+          <view class="title _e4eaefe">
+            就餐时间
+          </view>
+          <view class="subTitle van-ellipsis _e4eaefe">
+            2019-12-15 07:30:28
+          </view>
+        </view>
+        <view class="goodsListItem _e4eaefe" wx:for="{{5}}" wx:key="self">
+          <image class="thumb _e4eaefe" src=""/>
+          <view class="title van-ellipsis _e4eaefe">这里是标题这里是标题这里是标题这里是标题</view>
+          <view class="num _e4eaefe">x10</view>
+        </view>
+      </view>
+      <image class="addBtn _e4eaefe" mode="widthFix" src="../../images/btn_zhdh_new.png" bindtap="$smartOrder$toCreate" data-wpytocreate-a=""/>
+    </view>
+  </view>
+  </view>

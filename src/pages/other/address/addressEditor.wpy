@@ -1,0 +1,276 @@
+<style scoped>
+.rowView {
+  width: 100%;
+  background: white;
+  display: flex;
+  height: 108rpx;
+}
+.rowView .contentView {
+  flex-shrink: 0;
+  flex: 1;
+  margin: 0 32rpx;
+  border-bottom: 1rpx solid #DEDEDE;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.contentView .title {
+  min-width: 160rpx;
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.contentView .input {
+  height: 100%;
+  flex: 1;
+}
+.contentView input {
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+}
+.contentView .rightView {
+  margin-left: auto;
+}
+.saveBtn {
+  width: 606rpx;
+  margin: 0 auto;
+  margin-top: 96rpx;
+  color: white;
+  font-size: 32rpx;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #57AF4A;
+  border-radius: 96rpx;
+  padding: 26rpx 0;
+}
+.delBtn {
+  background: white;
+  width: 606rpx;
+  margin: 0 auto;
+  margin-top: 32rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 96rpx;
+  padding: 26rpx 0;
+}
+.chooseAreaView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.chooseAreaView .header {
+  width: 100%;
+  background: #F9FAFB;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.chooseAreaView .header .closeIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 34rpx;
+}
+.closeIcon .icon {
+  width: 22rpx;
+}
+.chooseAreaView .header .title {
+  font-size: 32rpx;
+  padding: 26rpx 0;
+}
+.chooseAreaView .header .confirmBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #57AF4A;
+  font-size: 32rpx;
+  padding: 0 32rpx;
+}
+.chooseAreaView .content {
+  width: 100%;
+  height: 624rpx;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.content .valueView {
+  padding: 0 32rpx;
+}
+.valueView .valueContentView {
+  position: relative;
+  padding: 26rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #EAEAEA;
+}
+.valueView .valueItem {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.valueView .valueItemSel {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #57AF4A;
+}
+.valueView .lineView {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 96rpx;
+  height: 4rpx;
+  background: #57AF4A;
+}
+.listView {
+  margin-top: 1rpx;
+  width: 100%;
+  display: flex;
+  flex: 1;
+}
+.listItem {
+  margin-top: 1rpx;
+  display: flex;
+  width: 100%;
+  background: white;
+}
+.listItemContent {
+  flex: 1;
+  font-size: 32rpx;
+  margin: 0 32rpx;
+  padding: 26rpx 0;
+  border-bottom: 1rpx solid #EAEAEA;
+}
+.listItemContentSel {
+  font-weight: 500;
+  color: #57AF4A;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="rowView">
+      <view class="contentView">
+        <view class="title">
+          姓名：
+        </view>
+        <view class="input">
+          <input placeholder="请填写收货人的姓名" />
+        </view>
+      </view>
+    </view>
+    <view class="rowView">
+      <view class="contentView">
+        <view class="title">
+          电话：
+        </view>
+        <view class="input">
+          <input placeholder="请填写收货人的手机号码" />
+        </view>
+      </view>
+    </view>
+    <view class="rowView">
+      <view class="contentView">
+        <view class="title">
+          地区：
+        </view>
+        <view class="input" @tap="chooseAreaAction()">
+          <input placeholder="请选择省 / 市 / 区" disabled value="{{location}}" />
+        </view>
+      </view>
+    </view>
+    <view class="rowView">
+      <view class="contentView">
+        <view class="title">
+          详细地址：
+        </view>
+        <view class="input">
+          <input placeholder="请填写街道门牌、楼层房间号等信息" />
+        </view>
+      </view>
+    </view>
+    <view class="rowView">
+      <view class="contentView">
+        <view class="title">
+          设为默认地址
+        </view>
+        <view class="rightView">
+          <van-switch checked="{{checked}}" size="48rpx" bind:change="onChange" active-color="#57AF4A" />
+        </view>
+      </view>
+    </view>
+    <view class="saveBtn">保存地址</view>
+    <view class="delBtn">删除地址</view>
+    <van-popup show="{{ chooseAreaViewShow }}" position="bottom">
+      <view class="chooseAreaView">
+        <view class="header">
+          <view class="closeIcon" @tap="closeChooseAreaAction()">
+            <image class="icon" mode="widthFix" src="../../images/icon_actionsheet_closed_12.png" />
+          </view>
+          <view class="title">联系地址</view>
+          <view class="confirmBtn">确定</view>
+        </view>
+        <view class="content">
+          <view class="valueView">
+            <view class="valueContentView">
+              <view class="valueItemSel">辽宁省</view>
+              <view class="valueItem">沈阳市</view>
+              <view class="valueItem">皇姑区</view>
+              <view class="lineView" />
+            </view>
+          </view>
+          <scroll-view scroll-y class="listView">
+            <view class="listItem" wx:for="{{10}}" wx:key="self">
+              <view class="listItemContent">
+                新城区
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-popup>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class AddressEditor extends wepy.page {
+    config = {
+      "usingComponents": {
+        "van-switch": "../../components/van/switch",
+        "van-popup": "../../components/van/popup"
+      },
+      navigationBarTitleText: '新增地址'
+    }
+    components = {
+    }
+    data = {
+      checked: false,
+      location: "",
+      chooseAreaViewShow: false
+    }
+    computed = {
+    }
+    methods = {
+      onChange: function({detail}) {
+        this.checked = detail
+      },
+      chooseAreaAction: function() {
+        this.chooseAreaViewShow = !this.chooseAreaViewShow
+      },
+      closeChooseAreaAction: function() {
+        this.chooseAreaViewShow = false
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

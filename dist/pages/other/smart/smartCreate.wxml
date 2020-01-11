@@ -1,0 +1,50 @@
+
+  <view class="container _d5deab8">
+    <view class="timeView _d5deab8" bindtap="toChangeDay" data-wpytochangeday-a="">
+      <view class="title _d5deab8">就餐时间</view>
+      <view class="value _d5deab8">{{currentDay}}</view>
+      <image class="icon _d5deab8" mode="widthFix" src="../../../images/icon_black_arrow_16.png"/>
+    </view>
+    <view class="listContentView _d5deab8">
+      <scroll-view scroll-y class="listView _d5deab8">
+        <view class="listItem _d5deab8"  wx:for="{{3}}" wx:key="self">
+          <view class="header _d5deab8">
+            <view class="lineView yellow _d5deab8"/>
+            <view class="title _d5deab8">早餐</view>
+            <view class="subTitle _d5deab8">就餐人数</view>
+            <view class="numView _d5deab8">
+              <image class="numIcon _d5deab8" mode="widthFix" src="../../../images/icon_minus_24px.png"/>
+              <view class="inputView _d5deab8">
+                <input value="1" type="number" class="_d5deab8"/>
+              </view>
+              <image class="numIcon _d5deab8" mode="widthFix" src="../../../images/icon_add_24px.png"/>
+            </view>
+          </view>
+          <view class="goodsView _d5deab8" wx:for="{{5}}" wx:key="self">
+            <image class="thumb _d5deab8" src=""/>
+            <view class="detailView _d5deab8">
+              <view class="title van-ellipsis _d5deab8">西红柿鸡蛋面</view>
+              <view class="bottom _d5deab8">
+                <view class="desc van-ellipsis _d5deab8">
+                  简介：西红柿、鸡蛋
+                </view>
+                <view class="numView _d5deab8">
+                  <image class="numIcon _d5deab8" mode="widthFix" src="../../../images/icon_minus_24px.png"/>
+                  <view class="inputView _d5deab8">
+                    <input value="1" type="number" class="_d5deab8"/>
+                  </view>
+                  <image class="numIcon _d5deab8" mode="widthFix" src="../../../images/icon_add_24px.png"/>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="submitBtn _d5deab8" bindtap="toGenerate" data-wpytogenerate-a="">
+      生成原材料
+    </view>
+    <van-popup show="{{ changeDayViewShow }}" position="bottom" class="_d5deab8">
+      <van-datetime-picker type="date" value="{{ currentDate }}" min-date="{{ minDate }}"  bind:confirm="onConfirm" bind:cancel="onCancel" class="_d5deab8"/>
+    </van-popup>
+  </view>

@@ -1,0 +1,234 @@
+<style scoped>
+.container {
+  padding-bottom: 32rpx;
+}
+.topView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding-bottom: 32rpx;
+}
+.topView .infoView {
+  display: flex;
+  flex-direction: column;
+  padding: 14rpx 32rpx;
+}
+.topView .infoView .row {
+  display: flex;
+  padding: 12rpx 0;
+  font-size: 32rpx;
+}
+.topView .blockView {
+  margin: 12rpx 32rpx;
+  background: #F7F7F7;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16rpx;
+  padding-bottom: 32rpx;
+}
+.topView .blockView .header {
+  display: flex;
+  flex-direction: row;
+  padding: 18rpx 16rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.topView .blockView .header .title {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.topView .blockView .header .num {
+  font-size: 28rpx;
+}
+.topView .blockView .content {
+  display: flex;
+  flex-direction: row;
+}
+.topView .blockView .content .showAllBtn {
+  display: flex;
+  padding: 0 16rpx;
+  margin-bottom: auto;
+}
+.topView .blockView .content .showAllBtn .btn {
+  width: 94rpx;
+  height: 144rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #57AF4A;
+  background: white;
+}
+.topView .blockView .goodsView {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+.topView .blockView .goodsView .goodView {
+  margin: 0 16rpx;
+  display: flex;
+  flex-direction: column;
+  width: 144rpx;
+}
+.topView .blockView .goodsView .goodView .thumb {
+  width: 100%;
+  height: 144rpx;
+  background: #eee;
+  flex-shrink: 0;
+}
+.topView .blockView .goodsView .goodView .title {
+  font-size: 24rpx;
+}
+.topView .blockView .goodsView .goodView .num {
+  color: #9B9B9B;
+  font-size: 24rpx;
+}
+.orderListView {
+  width: 100%;
+  display: flex;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="topView">
+      <view class="infoView">
+        <view class="row">
+          订单编号：20191216001
+        </view>
+        <view class="row">
+          创建时间：2019-12-16 09:26:38
+        </view>
+        <view class="row">
+          就餐日期：2019-12-16
+        </view>
+      </view>
+      <view class="blockView">
+        <view class="header">
+          <view class="title">早餐</view>
+          <view class="num">就餐人数：100人</view>
+        </view>
+        <view class="content">
+          <view class="goodsView">
+            <view class="goodView">
+              <image class="thumb" />
+              <view class="title">西红柿炒鸡蛋</view>
+              <view class="num">x30</view>
+            </view>
+            <view class="goodView">
+              <image class="thumb" />
+              <view class="title">西红柿炒鸡蛋</view>
+              <view class="num">x30</view>
+            </view>
+            <view class="goodView">
+              <image class="thumb" />
+              <view class="title">西红柿炒鸡蛋</view>
+              <view class="num">x30</view>
+            </view>
+          </view>
+          <view class="showAllBtn">
+            <!-- <view class="btn">
+              <view>查看</view>
+              <view>全部</view>
+            </view> -->
+          </view>
+        </view>
+      </view>
+      <view class="blockView">
+        <view class="header">
+          <view class="title">午餐</view>
+          <view class="num">就餐人数：100人</view>
+        </view>
+        <view class="content">
+          <view class="goodsView">
+            <view class="goodView">
+              <image class="thumb" />
+              <view class="title">西红柿炒鸡蛋</view>
+              <view class="num">x30</view>
+            </view>
+            <view class="goodView">
+              <image class="thumb" />
+              <view class="title">西红柿炒鸡蛋</view>
+              <view class="num">x30</view>
+            </view>
+            <view class="goodView">
+              <image class="thumb" />
+              <view class="title">西红柿炒鸡蛋</view>
+              <view class="num">x30</view>
+            </view>
+          </view>
+          <view class="showAllBtn">
+            <view class="btn" @tap="toShowAll()">
+              <view>查看</view>
+              <view>全部</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="blockView">
+        <view class="header">
+          <view class="title">晚餐</view>
+          <view class="num">就餐人数：100人</view>
+        </view>
+        <view class="content">
+          <view class="goodsView">
+            <view class="goodView">
+              <image class="thumb" />
+              <view class="title">西红柿炒鸡蛋</view>
+              <view class="num">x30</view>
+            </view>
+            <view class="goodView">
+              <image class="thumb" />
+              <view class="title">西红柿炒鸡蛋</view>
+              <view class="num">x30</view>
+            </view>
+            <view class="goodView">
+              <image class="thumb" />
+              <view class="title">西红柿炒鸡蛋</view>
+              <view class="num">x30</view>
+            </view>
+          </view>
+          <view class="showAllBtn">
+            <view class="btn">
+              <view>查看</view>
+              <view>全部</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="orderListView" wx:for="{{3}}" wx:key="self" @tap="toDetail()" >
+      <orderItemView />
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import OrderItemView from "../../../components/orderItemView";
+
+  export default class SmartDetail extends wepy.page {
+    config = {
+      navigationBarTitleText: '订单详情'
+    }
+    components = {
+      orderItemView: OrderItemView
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+      toShowAll: function() {
+        this.$navigate({url:"../smart/smartDetailAll"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

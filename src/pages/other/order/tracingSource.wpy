@@ -1,0 +1,216 @@
+<style scoped>
+.container, page {
+  height: 100%;
+}
+.topView {
+  width: 100%;
+  height: 480rpx;
+}
+.videoView {
+  width: 100%;
+  height: 100%;
+}
+.videoView video {
+  width: 100%;
+  height: 100%;
+}
+.topView .content {
+  background: #999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.topView .timeView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12rpx 4rpx;
+  border-radius: 48rpx;
+  margin-top: 32rpx;
+  background: #FFFFFF94;
+}
+.topView .timeView .icon {
+  width: 24rpx;
+  padding: 0 20rpx;
+}
+.topView .timeView .time {
+  color: #57AF4A;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.topView .detailView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.topView .detailView .name {
+  color: white;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.topView .detailView .time {
+  color: white;
+  font-size: 28rpx;
+  margin-top: 8rpx;
+}
+.topView .detailView .monitorBtn {
+  color: white;
+  font-size: 28rpx;
+  font-weight: 600;
+  padding: 12rpx 48rpx;
+  border-radius: 64rpx;
+  background: #57AF4A;
+  margin-top: 32rpx;
+}
+.listView {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  background: white;
+  padding: 16rpx 0;
+}
+.listView .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.listView .listItem {
+  margin: 16rpx 32rpx;
+  padding: 40rpx 32rpx;
+  box-shadow: 0rpx 4rpx 20rpx 0rpx rgba(235,238,243,0.8);
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.listView .listItem .icon {
+  width: 48rpx;
+  margin-right: 16rpx;
+}
+.listView .listItem .title {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.listView .listItem .valueView {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-left: auto;
+}
+.listView .listItem .valueView .text {
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.listView .listItem .valueView .num {
+  font-size: 64rpx;
+  font-weight: bold;
+}
+.listView .listItem .valueView .unit {
+  font-size: 28rpx;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="topView">
+      <view class="videoView" wx:if="{{showMonitor}}">
+        <video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" show-center-play-btn="{{false}}" controls></video>
+      </view>
+      <view class="content" wx:else>
+        <view class="timeView">
+          <image class="icon" mode="widthFix" src="/images/icon_green_arrow_left_16.png" />
+          <view class="time">2019-12-26 </view>
+          <image class="icon" mode="widthFix" src="/images/icon_green_arrow_16.png" />
+        </view>
+        <view class="detailView">
+          <view class="name">萧山临浦基地</view>
+          <view class="time">更新于09:43:58</view>
+          <view class="monitorBtn" @tap="toShowMonitor()">查看监控</view>
+        </view>
+      </view>
+    </view>
+    <view class="listView">
+      <scroll-view class="content" scroll-y>
+        <view class="listItem">
+          <image class="icon" mode="widthFix" src="/images/icon_sy_rain_24.png" />
+          <view class="title">雨量</view>
+          <view class="valueView">
+            <view class="num">0.00</view>
+            <view class="unit">mm</view>
+          </view>
+        </view>
+        <view class="listItem">
+          <image class="icon" mode="widthFix" src="/images/icon_sy_temperature_24.png" />
+          <view class="title">空气温度</view>
+          <view class="valueView">
+            <view class="num">19.1</view>
+            <view class="unit">℃</view>
+          </view>
+        </view>
+        <view class="listItem">
+          <image class="icon" mode="widthFix" src="/images/icon_sy_kqsd_24.png" />
+          <view class="title">空气湿度</view>
+          <view class="valueView">
+            <view class="num">33.5</view>
+            <view class="unit">%RH</view>
+          </view>
+        </view>
+        <view class="listItem">
+          <image class="icon" mode="widthFix" src="/images/icon_sy_ldwd_24.png" />
+          <view class="title">露点温度</view>
+          <view class="valueView">
+            <view class="num">1.5</view>
+            <view class="unit">℃</view>
+          </view>
+        </view>
+        <view class="listItem">
+          <image class="icon" mode="widthFix" src="/images/icon_sy_fx_24.png" />
+          <view class="title">风向</view>
+          <view class="valueView">
+            <view class="text">东风</view>
+          </view>
+        </view>
+        <view class="listItem">
+          <image class="icon" mode="widthFix" src="/images/icon_sy_fs_24.png" />
+          <view class="title">风速</view>
+          <view class="valueView">
+            <view class="num">2.558</view>
+            <view class="unit">m/s</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class TracingSource extends wepy.page {
+    config = {
+      navigationBarTitleText: '溯源'
+    }
+    components = {
+    }
+    data = {
+      showMonitor: false
+    }
+    computed = {
+    }
+    methods = {
+      toShowMonitor: function() {
+        this.showMonitor = true
+        let videoContext = wx.createVideoContext('myVideo')
+        videoContext.play()
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

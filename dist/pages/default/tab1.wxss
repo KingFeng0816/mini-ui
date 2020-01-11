@@ -1,0 +1,3 @@
+@import "./../../components/supplierBuy.wxss";
+@import "./../../components/smartOrder.wxss";
+

@@ -1,0 +1,9 @@
+@import "./orderItemView.wxss";
+
+.container._6577174 {
+  padding-bottom: 16rpx;
+}
+.itemView._6577174 {
+  width: 100%;
+  display: flex;
+}

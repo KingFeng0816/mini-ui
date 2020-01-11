@@ -1,0 +1,340 @@
+<style scoped>
+page {
+  height: 100%;
+}
+.container {
+  height: 100%;
+}
+.timeView {
+  width: 654rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 16rpx;
+  padding: 32rpx;
+  background: white;
+  border-radius: 16rpx;
+}
+.timeView .title {
+  font-size: 36;
+  font-weight: 600;
+}
+.timeView .value {
+  margin-left: auto;
+  font-size: 32rpx;
+}
+.menuView, .supplierView {
+  width: 718rpx;
+  margin: 0 auto;
+  margin-bottom: 16rpx;
+  background: white;
+  border-radius: 16rpx;
+  padding-bottom: 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+.menuView .header {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 32rpx;
+  padding-top: 28rpx;
+  padding-bottom: 24rpx;
+}
+.menuView .header .icon {
+  flex-shrink: 0;
+  width: 32rpx;
+  margin-left: 8rpx;
+}
+.menuView .title {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.menuView .subTitle {
+  flex: 1;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.menuItemView {
+  width: 100%;
+  padding: 8rpx 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.menuItemView .thumb {
+  flex-shrink: 0;
+  width: 96rpx;
+  height: 96rpx;
+  margin-left: 32rpx;
+  margin-right: 16rpx;
+  background: #eee;
+}
+.menuItemView .titleView {
+  flex: 1;
+  font-size: 32rpx;
+  color: #15200C;
+  margin-right: 16rpx;
+}
+.menuItemView .num {
+  flex-shrink: 0;
+  font-size: 28rpx;
+  color: #9C9C9C;
+  margin-right: 32rpx;
+}
+.goodsView {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24rpx 32rpx;
+}
+.goodsView .goodsThumb {
+  flex-shrink: 0;
+  position: relative;
+  width: 96rpx;
+  height: 96rpx;
+  margin-right: 16rpx;
+}
+.goodsThumb .thumb {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+.goodsThumb .state {
+  width: 52rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.goodsView .descView {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  font-size: 28rpx;
+  color: #9c9c9c;
+  margin-top: 12rpx;
+}
+.goodsView .titleView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.goodsView .descView .num {
+  margin-left: 36rpx;
+}
+.priceView {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.goodsView .detail {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 16rpx;
+}
+.listContentView {
+  margin-top: 16rpx;
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
+.listView {
+  width: 100%;
+  height: 100%;
+}
+.submitBtn {
+  margin-top: 40rpx;
+  margin-bottom: 48rpx;
+  width: 606rpx;
+  height: 96rpx;
+  background: #57AF4A;
+  border-radius: 96rpx;
+  color: white;
+  font-size: 32rpx;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.changeSupplierView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.changeSupplierView .header {
+  width: 100%;
+  background: #F9FAFB;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.changeSupplierView .header .closeIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 34rpx;
+}
+.closeIcon .icon {
+  width: 22rpx;
+}
+.changeSupplierView .header .title {
+  font-size: 32rpx;
+  padding: 26rpx 0;
+}
+.changeSupplierView .header .confirmBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #57AF4A;
+  font-size: 32rpx;
+  padding: 0 32rpx;
+}
+.changeSupplierView .content {
+  width: 100%;
+  height: 624rpx;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.listView {
+  margin-top: 1rpx;
+  width: 100%;
+  display: flex;
+  flex: 1;
+}
+.listItem {
+  margin-top: 1rpx;
+  display: flex;
+  width: 100%;
+  background: white;
+}
+.listItemContent {
+  flex: 1;
+  font-size: 32rpx;
+  margin: 0 32rpx;
+  padding: 26rpx 0;
+  border-bottom: 1rpx solid #EAEAEA;
+}
+.listItemContentSel {
+  font-weight: 500;
+  color: #57AF4A;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="timeView">
+      <view class="title">就餐时间</view>
+      <view class="value">2019-12-16</view>
+    </view>
+    <view class="timeView">
+      <view class="title">就餐人数</view>
+      <view class="value">100</view>
+    </view>
+    <view class="listContentView">
+      <scroll-view scroll-y class="listView">
+        <view class="menuView">
+          <view class="header">
+            <view class="title">菜谱</view>
+          </view>
+          <view class="menuItemView" wx:for="{{3}}" wx:key="self">
+            <image class="thumb" src="" />
+            <view class="titleView">醋溜白菜</view>
+            <view class="num">x2</view>
+          </view>
+        </view>
+        <view class="menuView" wx:for="{{3}}" wx:key="self">
+          <view class="header" @tap="changeSupplier()">
+            <view class="title">叶菜类</view>
+            <view class="subTitle">文运街智慧生鲜市场</view>
+            <image class="icon" mode="widthFix" src="../../../images/icon_black_arrow_16.png" />
+          </view>
+          <view class="goodsView" wx:for="{{3}}" wx:key="self">
+            <view class="goodsThumb">
+              <image class="thumb" src="" />
+              <image class="state" mode="widthFix" src="../../../images/img_superscript_hg.png" />
+            </view>
+            <view class="detail">
+              <view class="titleView">
+                <view>醋溜白菜</view>
+                <view class="priceView">
+                  ￥79.6
+                </view>
+              </view>
+              <view class="descView">
+                <view class="price">1.99元/斤</view>
+                <view class="num">40斤</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="submitBtn" @tap="toSubmit()">
+      提交订单
+    </view>
+    <van-popup show="{{ changeSupplierViewShow }}" position="bottom">
+      <view class="changeSupplierView">
+        <view class="header">
+          <view class="closeIcon" @tap="closeChooseAreaAction()">
+            <image class="icon" mode="widthFix" src="../../../images/icon_actionsheet_closed_12.png" />
+          </view>
+          <view class="title">供应商</view>
+          <view class="confirmBtn">确定</view>
+        </view>
+        <view class="content">
+          <scroll-view scroll-y class="listView">
+            <view class="listItem" wx:for="{{10}}" wx:key="self">
+              <view class="listItemContent listItemContentSel">
+                新城区
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-popup>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class SmartGenerateRawMaterials extends wepy.page {
+    config = {
+      navigationBarTitleText: '生成原材料',
+      usingComponents: {
+        'van-popup': '../../../components/van/popup'
+      }
+    }
+    components = {
+    }
+    data = {
+      changeSupplierViewShow: false
+    }
+    computed = {
+    }
+    methods = {
+      toSubmit: function() {
+        this.$navigate({url:"../order/createOrder"})
+      },
+      changeSupplier: function() {
+        this.changeSupplierViewShow = true
+      },
+      closeChooseAreaAction: function() {
+        this.changeSupplierViewShow = false
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

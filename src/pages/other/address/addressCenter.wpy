@@ -1,0 +1,135 @@
+<style scoped>
+.container {
+  padding-bottom: 100rpx;
+}
+.addBtn {
+  position: fixed;
+  font-size: 34;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: #57AF4A;
+}
+.rowItem {
+  width: 686rpx;
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: row;
+  background: white;
+}
+.rowContent {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #DEDEDE;
+}
+.selBtn {
+  flex-shrink: 0;
+  padding-right: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selBtn .icon {
+  width: 32rpx;
+}
+.detailView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx 0;
+}
+.detailView .title {
+  margin-top: 4rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.subView {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #7C7C7C;
+  font-size: 28rpx;
+}
+.subView .phone {
+  margin-left: 28rpx;
+}
+.subView .defaultView {
+  margin-left: 30rpx;
+  width: 72rpx;
+  height: 36rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #57AF4A;
+  font-size: 24rpx;
+  font-weight: 600;
+  border-radius:8rpx;
+  border:2rpx solid rgba(87,175,74,1);
+}
+.editBtn {
+  flex-shrink: 0;
+  padding-left: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.editBtn .icon {
+  width: 40rpx;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="rowItem" wx:for="{{10}}" wx:key="self">
+      <view class="rowContent">
+        <view class="selBtn">
+          <image class="icon" mode="widthFix" src="/images/icon_activited_16.png" />
+        </view>
+        <view class="detailView">
+          <view class="title">北京市朝阳区霄云路霄云里8号</view>
+          <view class="subView">
+            <view class="name">王大陆</view>
+            <view class="phone">13082347896</view>
+            <view class="defaultView">默认</view>
+          </view>
+        </view>
+        <view class="editBtn">
+          <image class="icon" mode="widthFix" src="/images/icon_edit_20.png" />
+        </view>
+      </view>
+    </view>
+    <view class="addBtn">新增地址</view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class AddressCenter extends wepy.page {
+    config = {
+      navigationBarTitleText: '地址管理'
+    }
+    components = {
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+      addAction: function() {
+        this.$navigate({url:"/pages/other/address/addressEditor"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

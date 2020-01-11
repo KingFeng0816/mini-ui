@@ -1,0 +1,347 @@
+<style scoped>
+.emptyView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.emptyView .text {
+  color: #9C9C9C;
+  font-size: 32rpx;
+}
+.emptyView .icon {
+  width: 100%;
+}
+.normalView {
+  margin-top: 96rpx;
+  margin-bottom: 100rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.normalView .topView {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 96rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  align-items: center;
+  z-index: 99;
+}
+.topView .icon {
+  flex-shrink: 0;
+  width: 22rpx;
+  margin-left: 32rpx;
+}
+.topView .location {
+  font-size: 32rpx;
+  color: #7C7C7C;
+  margin: 0 18rpx;
+}
+.topView .editBtn {
+  flex-shrink: 0;
+  font-size: 32rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 32rpx;
+}
+.normalView .listView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 16rpx;
+}
+.listView .supplierView {
+  flex: 1;
+  margin: 16rpx;
+  margin-top: 0;
+  border-radius: 16rpx;
+  background: white;
+}
+.supplierView .header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 32rpx;
+  padding-bottom: 20rpx;
+}
+.supplierView .header .icon {
+  flex-shrink: 0;
+  width: 32rpx;
+  margin-left: 32rpx;
+  margin-right: 16rpx;
+}
+.supplierView .header .title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-right: 32rpx;
+}
+.supplierView .goodsView {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16rpx 0;
+}
+.supplierView .goodsView .icon  {
+  flex-shrink: 0;
+  width: 32rpx;
+  margin-right: 16rpx;
+}
+.goodsView .goodsThumb {
+  flex-shrink: 0;
+  position: relative;
+  width: 96rpx;
+  height: 96rpx;
+  margin-right: 16rpx;
+}
+.goodsThumb .thumb {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+.goodsThumb .state {
+  width: 52rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.goodsView .detailView {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 16rpx;
+}
+.supplierView .detailView .title {
+  font-size: 32rpx;
+}
+.supplierView .detailView .price {
+  font-size: 28rpx;
+  color: #9c9c9c;
+  margin-top: 12rpx;
+}
+.supplierView .numView {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.numView .numIcon {
+  width: 48rpx;
+}
+.inputView input {
+  font-size: 28rpx;
+  height: 100%;
+  text-align: center;
+  width: 64rpx;
+}
+.goodsListView {
+  flex: 1;
+  padding: 0 32rpx;
+}
+.goodsListView .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2rpx solid #eaeaea;
+  padding-bottom: 22rpx;
+}
+.supplierView .moreView {
+  flex: 1;
+  height: 88rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.supplierView .moreView .title {
+  color: #9B9B9B;
+  font-size: 28rpx;
+  margin-right: 16rpx;
+}
+.supplierView .moreView .icon {
+  width: 32rpx;
+}
+.normalView .bottomView {
+  z-index: 99;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+}
+.bottomView .allChooseBtn {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+.allChooseBtn .icon {
+  margin-left: 48rpx;
+  width: 32rpx;
+  margin-right: 16rpx;
+}
+.allChooseBtn .title {
+  font-size: 32rpx;
+  margin-right: 32rpx;
+}
+.bottomView .subMitBtn {
+  flex-shrink: 0;
+  width: 208rpx;
+  height: 100rpx;
+  background: #57AF4A;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottomView .delBtn {
+  flex-shrink: 0;
+  width: 208rpx;
+  height: 100rpx;
+  background: #FF3535;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.totalView {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 14rpx;
+}
+.totalView .title {
+  font-size: 28rpx;
+}
+.totalView .num {
+  font-size: 28rpx;
+  color: #57AF4A;
+  font-weight: 600;
+}
+.totalView .price {
+  font-size: 36rpx;
+  color: #FF3535;
+  font-weight: 500;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="emptyView" wx:if="{{false}}">
+      <image class="icon" mode="widthFix" src="/images/img_gwc_empty.png" />
+      <view class="text">空空如也~</view>
+    </view>
+    <view class="normalView" wx:else>
+      <view class="topView">
+        <image class="icon" mode="widthFix" src="/images/icon_address.png" />
+        <view class="location van-ellipsis">北京市朝阳区霄云路8号北京市朝阳区霄云路8号</view>
+        <view class="editBtn" @tap="changeEditMode()">{{isEdit ? '完成':'编辑商品'}}</view>
+      </view>
+      <view class="listView">
+        <view class="supplierView" wx:for="{{3}}" wx:key="self" >
+          <view class="header">
+            <image class="icon" mode="widthFix" src="/images/icon_activited_16.png">
+            <view class="title van-ellipsis">文运街智慧生鲜市场文运街智慧生鲜市场文运街智慧生鲜市场</view>
+          </view>
+          <view class="goodsListView">
+            <view class="content">
+              <view class="goodsView" wx:for="{{3}}" wx:key="self">
+                <image class="icon" mode="widthFix" src="/images/icon_activited_16.png">
+                <view class="goodsThumb">
+                  <image class="thumb" src="" />
+                  <image class="state" mode="widthFix" src="/images/img_superscript_hg.png" />
+                </view>
+                <view class="detailView">
+                  <view class="title">大白菜</view>
+                  <view class="price">1.99元/斤</view>
+                </view>
+                <view class="numView">
+                  <image class="numIcon" mode="widthFix" src="/images/icon_minus_24px.png" />
+                  <view class="inputView">
+                    <input value="1" type="number" />
+                  </view>
+                  <image class="numIcon" mode="widthFix" src="/images/icon_add_24px.png" />
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="moreView">
+            <view class="title">展开显示更多</view>
+            <image class="icon" mode="widthFix" src="/images/icon_unfold_16.png" />
+          </view>
+        </view>
+      </view>
+      <view class="bottomView" wx:if="{{isEdit}}">
+        <view class="allChooseBtn">
+          <image class="icon" mode="widthFix" src="/images/icon_activited_16.png">
+          <view class="title">全选</view>
+        </view>
+        <view class="totalView">
+          <view class="title">已选择</view>
+          <view class="num">3</view>
+          <view class="title">项</view>
+        </view>
+        <view class="delBtn">删除</view>
+      </view>
+      <view class="bottomView" wx:else>
+        <view class="allChooseBtn">
+          <image class="icon" mode="widthFix" src="/images/icon_activited_16.png">
+          <view class="title">全选</view>
+        </view>
+        <view class="totalView">
+          <view class="title">合计：</view>
+          <view class="price">￥276.8</view>
+        </view>
+        <view class="subMitBtn" @tap="toSubmit()">去结算</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Cart extends wepy.page {
+    config = {
+      navigationBarTitleText: '购物车'
+    }
+    components = {
+    }
+    data = {
+      isEdit: false
+    }
+    computed = {
+    }
+    methods = {
+      changeEditMode: function() {
+        this.isEdit = !this.isEdit
+      },
+      toSubmit: function() {
+        this.$parent.$navigate({url:"/pages/other/order/createOrder"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

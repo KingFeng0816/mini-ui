@@ -1,0 +1,313 @@
+<style scoped>
+page {
+  background: white;
+}
+.container {
+  background: white;
+  padding-bottom: 16rpx;
+}
+.topBlockView {
+  margin-bottom: 14rpx;
+}
+.swiperContent {
+  margin: 32rpx 0;
+  width: 686rpx;
+  height: 386rpx;
+  background: white;
+}
+.swiperView {
+  width: 100%;
+  height: 100%;
+}
+.swiperItem {
+  border-radius: 16rpx;
+  background: #eee;
+}
+
+.listView {
+  width: 100%;
+}
+.listHeader .title {
+  margin: 8rpx 32rpx;
+  color: black;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.listView .subList {
+  width: 100%;
+  background: white;
+  margin-bottom: 56rpx;
+}
+.subListContent {
+  padding: 0 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.listView .listGoodsItem {
+  padding: 16rpx 28rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius:8rpx;
+  box-shadow:0rpx 8rpx 20rpx 0rpx rgba(132,137,147,0.1);
+  margin: 8rpx;
+}
+.listGoodsItem .thumb {
+  background: #eee;
+  width: 64rpx;
+  height: 64rpx;
+}
+.listGoodsItem .title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-top: 12rpx;
+}
+.upsAndDowns {
+  display: flex;
+  margin-top: 4rpx;
+  flex-direction: row;
+  align-items: center;
+}
+.upsAndDowns .icon {
+  margin-right: 8rpx;
+  width: 24rpx;
+  flex-shrink: 0;
+}
+.upsAndDowns .desc {
+  font-size: 28rpx;
+}
+.red {
+  color: #FF3535
+}
+.green {
+  color: #00BD6D
+}
+.listGoodsItem .price {
+  margin-top: 4rpx;
+  font-size: 28rpx;
+  white-space: nowrap;
+}
+.subListContent .listPurchasersItem {
+  display: flex;
+  flex-direction: column;
+  border-radius:8rpx;
+  box-shadow:0rpx 8rpx 20rpx 0rpx rgba(132,137,147,0.12);
+  margin: 8rpx 16rpx;
+}
+.smallLeft {
+  padding: 0 16rpx;
+}
+.listPurchasersItem {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.listPurchasersItem .topView {
+  padding: 32rpx;
+  display: flex;
+  flex-direction: row;
+}
+.topView .thumb {
+  flex-shrink: 0;
+  width: 144rpx;
+  height: 144rpx;
+  background: #eee;
+  margin-right: 16rpx;
+}
+.listPurchasersItem .topView .rightView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.rightView .name {
+  font-size: 36rpx;
+  font-weight: 500;
+}
+.rightView .desc {
+  font-size: 28rpx;
+}
+.rightView .time {
+  font-size: 28rpx;
+  color: #9B9B9B;
+}
+.listPurchasersItem .bottomView {
+  flex: 1;
+  padding: 18rpx 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.bottomView .num {
+  font-size: 28rpx;
+}
+.bottomView .price {
+  flex-shrink: 0;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #57AF4A;
+}
+.empty {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 312rpx;
+}
+.empty .title {
+  color: #9B9B9B;
+  font-size: 28rpx;
+}
+.empty .btn {
+  margin-top: 16rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 18rpx 48rpx;
+  background: #57AF4A;
+  border-radius: 40rpx;
+}
+.empty .btn .icon {
+  width: 20rpx;
+  margin-right: 12rpx;
+}
+.empty .btn .desc {
+  color: white;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="topBlockView">
+      <view class="swiperContent">
+        <swiper class="swiperView" indicator-dots="{{indicatorDots}}"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{bannerList}}" wx:key="*this">
+            <swiper-item class="swiperItem" catchtap="onItemClick" data-title="{{item}}">
+              <view class="swiperItem {{item}}">{{item}}+{{titleStr}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+    <view class="listView">
+      <view class=listHeader">
+        <view class="title">
+          {{titleStr}}
+        </view>
+      </view>
+      <view class="empty" wx:if="{{flowList.length == 0}}">
+        <view class="title">暂无关注的菜品价格</view>
+        <view class="btn" @tap="toFollow()">
+          <image class="icon" mode="widthFix" src="/images/icon_hqjg_btn_add_10.png" />
+          <view class="desc">去关注</view>
+        </view>
+      </view>
+      <scroll-view scroll-x class="subList" wx:else @tap="toQuotation()">
+        <view class="subListContent">
+          <view class="listGoodsItem" wx:for="{{10}}" wx:key="self">
+            <image class="thumb" src="" />
+            <view class="title van-ellipsis">大白菜</view>
+            <view class="upsAndDowns">
+              <image class="icon" mode="widthFix" src="/images/icon_hqjg_up_12.png" />
+              <view class="desc red">+24.68%</view>
+            </view>
+            <view class="price">现价1.25元/kg</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="listView">
+      <view class=listHeader">
+        <view class="title">
+          食材采购信息
+        </view>
+      </view>
+      <scroll-view scroll-x class="subList">
+        <view class="subListContent smallLeft">
+          <view class="listPurchasersItem" wx:for="{{10}}" wx:key="self">
+            <view class="topView">
+              <image class="thumb" src="" />
+              <view class="rightView">
+                <view class="name van-ellipsis">辽宁省第一中学</view>
+                <view class="desc van-ellipsis">寻找【全品类】食材供应商</view>
+                <view class="time van-ellipsis">截止时间：2019-12-20 18:00:00</view>
+              </view>
+            </view>
+            <view class="bottomView">
+              <view class="num van-ellipsis">已参与企业：2</view>
+              <view class="price van-ellipsis">3000元/天</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import SupplierRowView from "./supplierRowView";
+  import {GetSwiperData} from "../store/actions/supplier.js";
+
+  export default class Supplier extends wepy.page {
+
+
+    config = {
+    };
+    components = {
+      supplierRowView: SupplierRowView
+    };
+    data = {
+      flowList: [1],
+      bannerList: [],
+      titleStr:"",
+      indicatorDots: true,
+      vertical: false,
+      autoplay: false,
+      interval: 2000,
+      duration: 500
+    };
+
+    computed = {
+
+    };
+    methods = {
+
+      toFollow: function() {
+        this.$parent.$navigate({url:'/pages/supplier/toFollow'})
+      },
+      toQuotation: function() {
+        this.$parent.$navigate({url:'/pages/supplier/quotation'})
+      },
+      onItemClick: function(event){
+        console.log(event.currentTarget.dataset.title);
+
+
+      }
+    };
+
+
+    onLoad()
+    {
+      GetSwiperData();
+
+    }
+
+
+    async loadBanner()
+    {
+      this.bannerList = await GetSwiperData();
+      console.log('title=='+this.bannerList[0].title);
+      this.$apply();
+    }
+
+    events = {
+    };
+
+
+  }
+</script>

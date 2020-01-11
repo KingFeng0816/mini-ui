@@ -1,0 +1,101 @@
+
+  <view class="container _608c571">
+    <view class="listView _608c571">
+      <scroll-view class="listContentView _608c571" scroll-y>
+        <view class="typeView _608c571">
+          <view class="title _608c571">请选择供应商类型</view>
+          <view class="tagsView _608c571">
+            <view class="tagItem tagItemSel _608c571"  wx:for="{{10}}" wx:key="self">批发市场</view>
+          </view>
+          <view class="lineView _608c571"/>
+        </view>
+        <view class="rowView _608c571">
+          <view class="rowContentView _608c571">
+            <view class="title _608c571">供应商名称：</view>
+            <input placeholder="请填写名称" class="_608c571"/>
+          </view>
+        </view>
+        <view class="rowView _608c571">
+          <view class="rowContentView _608c571">
+            <view class="title _608c571">负责人：</view>
+            <input placeholder="请填写负责人" class="_608c571"/>
+          </view>
+        </view>
+        <view class="rowView _608c571">
+          <view class="rowContentView _608c571">
+            <view class="title _608c571">联系方式：</view>
+            <input placeholder="请填写电话" class="_608c571"/>
+          </view>
+        </view>
+        <view class="rowView _608c571">
+          <view class="rowContentView _608c571" bindtap="chooseAreaAction" data-wpychooseareaaction-a="">
+            <view class="title _608c571">选择区域：</view>
+            <input placeholder="请选择区域" disabled class="_608c571"/>
+            <image class="icon _608c571" mode="widthFix" src="/images/icon_black_arrow_16.png"/>
+          </view>
+        </view>
+        <view class="rowView _608c571">
+          <view class="rowContentView _608c571">
+            <view class="title _608c571">详细地址：</view>
+            <input placeholder="请填写街道门牌、楼层房间号等信息" class="_608c571"/>
+          </view>
+        </view>
+        <view class="rowView _608c571">
+          <view class="rowContentView _608c571" bindtap="chooseVarietyAction" data-wpychoosevarietyaction-a="">
+            <view class="title _608c571">经营品种：</view>
+            <input placeholder="请选择" disabled class="_608c571"/>
+            <image class="icon _608c571" mode="widthFix" src="/images/icon_black_arrow_16.png"/>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="saveBtn _608c571">保存</view>
+    <van-popup show="{{ chooseAreaViewShow }}" position="bottom" class="_608c571">
+      <view class="chooseAreaView _608c571">
+        <view class="header _608c571">
+          <view class="closeIcon _608c571" bindtap="closeChooseAreaAction" data-wpyclosechooseareaaction-a="">
+            <image class="icon _608c571" mode="widthFix" src="/images/icon_actionsheet_closed_12.png"/>
+          </view>
+          <view class="title _608c571">区域</view>
+          <view class="confirmBtn _608c571">确定</view>
+        </view>
+        <view class="content _608c571">
+          <view class="valueView _608c571">
+            <view class="valueContentView _608c571">
+              <view class="valueItemSel _608c571">辽宁省</view>
+              <view class="valueItem _608c571">沈阳市</view>
+              <view class="valueItem _608c571">皇姑区</view>
+              <view class="lineView _608c571"/>
+            </view>
+          </view>
+          <scroll-view scroll-y class="listView _608c571">
+            <view class="listItem _608c571"  wx:for="{{10}}" wx:key="self">
+              <view class="listItemContent _608c571">
+                新城区
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-popup>
+    <van-popup show="{{ changeChooseVarietyViewShow }}" position="bottom" class="_608c571">
+      <view class="changeSupplierView _608c571">
+        <view class="header _608c571">
+          <view class="closeIcon _608c571" bindtap="closeVarietyAction" data-wpyclosevarietyaction-a="">
+            <image class="icon _608c571" mode="widthFix" src="/images/icon_actionsheet_closed_12.png"/>
+          </view>
+          <view class="title _608c571">经营品种</view>
+          <view class="confirmBtn _608c571">确定</view>
+        </view>
+        <view class="content _608c571">
+          <scroll-view scroll-y class="listView _608c571">
+            <view class="listItem _608c571"  wx:for="{{10}}" wx:key="self">
+              <view class="listItemContent listItemContentSel _608c571">
+                新城区
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-popup>
+  </view>

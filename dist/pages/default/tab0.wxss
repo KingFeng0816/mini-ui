@@ -1,0 +1,3 @@
+@import "./../../components/supplier.wxss";
+@import "./../../components/purchaser.wxss";
+

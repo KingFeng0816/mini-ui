@@ -1,0 +1,136 @@
+<style scoped>
+.listItem {
+  width: 100%;
+  padding: 32rpx 0;
+  display: flex;
+  flex-direction: row;
+  background: white;
+}
+.listItem .imageView {
+  flex-shrink: 0;
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 32rpx;
+  margin-right: 16rpx;
+}
+.listItem .imageContent {
+  width: 100%;
+  height: 100%;
+  border-radius: 16rpx;
+  background: #eee;
+}
+.detailView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 32rpx;
+  width: 0;
+}
+.detailView .title {
+  font-weight: 500;
+  font-size: 36rpx;
+}
+.detailView .location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.location .icon {
+  width: 28rpx;
+  margin-right: 14rpx;
+}
+.desc {
+  flex: 1;
+  font-size: 28rpx;
+  color: #9C9C9C;
+}
+.detailView .contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.contact .name {
+  width: 192rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.contact .tel {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 0;
+}
+.name .icon {
+  flex-shrink: 0;
+  width: 28rpx;
+  margin-right: 14rpx;
+}
+.tel .icon {
+  flex-shrink: 0;
+  width: 28rpx;
+  margin-right: 14rpx;
+}
+
+</style>
+<template>
+  <view class="listItem" id="{{canshu1.id}}" catchtap="supplierRowViewTap">
+    <view class="imageView">
+      <image class="imageContent" src="{{canshu1.storeLogoUrl}}" />
+    </view>
+    <view class="detailView">
+      <view class="title van-ellipsis">{{canshu1.storeName}}</view>
+      <view class="location">
+        <image class="icon" mode="widthFix" src="../images/icon_address.png" />
+        <view class="desc van-ellipsis">{{canshu1.storeAddress}}</view>
+      </view>
+      <view class="contact">
+        <view class="name">
+          <image class="icon" mode="widthFix" src="../images/icon_people.png" />
+          <view class="desc van-ellipsis">{{canshu1.storeUserName}}</view>
+        </view>
+        <view class="tel">
+          <image class="icon" mode="widthFix" src="../images/icon_phone.png" />
+          <view class="desc van-ellipsis">{{canshu1.storeMobile}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class SupplierRowView extends wepy.component {
+    props = {
+      canshu1: {
+        type: Object,
+        default: null
+      }
+    }
+    config = {
+    }
+    components = {
+
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+      supplierRowViewTap(e) {
+        console.log(e.currentTarget.id)
+        var currentID = e.currentTarget.id
+        this.triggerEvent('supplierRowViewTap', {
+          currentID:currentID
+        }, {})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

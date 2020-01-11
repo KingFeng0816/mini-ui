@@ -1,0 +1,71 @@
+
+  <view class="container _01ba84f">
+    <view class="topView _01ba84f">
+      <view class="bgView _01ba84f"/>
+      <view class="introView _01ba84f">
+        <image class="logo _01ba84f" src=""/>
+        <view class="detailView _01ba84f">
+          <view class="titleView _01ba84f"> 
+            <view class="title van-ellipsis _01ba84f">
+              文运街智慧生鲜市场文运街智慧生鲜市场
+            </view>
+            <view class="detailBtn _01ba84f" bindtap="showSupplierDetail" data-wpyshowsupplierdetail-a="">详情</view>
+          </view>
+          <view class="locationView _01ba84f">
+            <image class="icon _01ba84f" mode="widthFix" src="../../images/icon_address.png"/>
+            <view class="location van-ellipsis _01ba84f">湖南省衡阳石鼓区南起司前街湖南省衡阳石鼓区南起司前街</view>
+          </view>
+          <view class="contact _01ba84f">
+            <view class="name _01ba84f">
+              <image class="icon _01ba84f" mode="widthFix" src="../../images/icon_people.png"/>
+              <view class="desc van-ellipsis _01ba84f">这里是联系人姓名这里是联系人姓名</view>
+            </view>
+            <view class="tel _01ba84f">
+              <image class="icon _01ba84f" mode="widthFix" src="../../images/icon_phone.png"/>
+              <view class="desc van-ellipsis _01ba84f">这里是联系电话这里是联系电话</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="contentView _01ba84f">
+      <scroll-view scroll-y class="leftView _01ba84f">
+        <view  wx:for="{{classes}}" wx:key="self" class="{{selectedClass.id == item.id ? 'leftItemSel':'leftItem'}} _01ba84f" bindtap="changeSelClass" data-wpychangeselclass-a="{{item}}">
+          {{item.title}}
+        </view>
+      </scroll-view>
+      <scroll-view scroll-y class="rightView _01ba84f">
+        <view class="header _01ba84f">{{selectedClass.title}}</view>
+        <view class="goodsView _01ba84f"  wx:for="{{10}}" wx:key="self" bindtap="showGoodsDetail" data-wpyshowgoodsdetail-a="">
+          <view class="goodsImv _01ba84f">
+            <image class="thumb _01ba84f" src=""/>
+            <image class="icon _01ba84f" mode="widthFix" src="../../images/img_superscript_hg.png"/>
+          </view>
+          <view class="intro _01ba84f">
+            <view class="title van-ellipsis _01ba84f">密云菠菜密云菠菜密云菠菜密云菠菜密云菠菜</view>
+            <view class="detail _01ba84f">
+              <view class="price _01ba84f">1.90元/斤</view>
+              <view class="numView _01ba84f">
+                <image class="icon _01ba84f" mode="widthFix" src="../../images/icon_minus_24px.png"/>
+                <view class="inputView _01ba84f">
+                  <input value="1" type="number" class="_01ba84f"/>
+                </view>
+                <image class="icon _01ba84f" mode="widthFix" src="../../images/icon_add_24px.png"/>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="bottomView _01ba84f">
+      <view class="cartBtn _01ba84f">
+        <image class="icon _01ba84f" mode="widthFix" src="../../images/icon_gwc_circle_40.png"/>
+        <view class="tag _01ba84f">9</view>
+      </view>
+      <view class="rightView _01ba84f">
+        <view class="totalTitle _01ba84f">合计：</view>
+        <view class="totalPrice _01ba84f">￥275.93</view>
+        <view class="subMitBtn _01ba84f">结算</view>
+      </view>
+    </view>
+  </view>

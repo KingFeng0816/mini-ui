@@ -1,0 +1,17 @@
+
+  <view class="container _d0f43be">
+    <view class="formView _d0f43be">
+      <view class="titleRow _d0f43be">
+        <view class="line0 titleBlock _d0f43be">检测时间</view>
+        <view class="line1 titleBlock _d0f43be">样品名称</view>
+        <view class="line2 titleBlock _d0f43be">检测结果</view>
+        <view class="line3 titleBlock _d0f43be">详情</view>
+      </view>
+      <view class="normalRow _d0f43be"  wx:for="{{10}}" wx:key="self">
+        <view class="line0 rowBlock _d0f43be">2019-12-27</view>
+        <view class="line1 rowBlock _d0f43be">小汤山胡萝卜</view>
+        <view class="line2 rowBlock _d0f43be">合格</view>
+        <view class="line3 rowBlock green _d0f43be">查看</view>
+      </view>
+    </view>
+  </view>

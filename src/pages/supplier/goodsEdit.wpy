@@ -1,0 +1,511 @@
+<style scoped>
+.container, page {
+  height: 100%;
+}
+.listView {
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
+.listContentView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.saveBtn {
+  font-size: 32rpx;
+  color: white;
+  font-weight: 500;
+  background: #57AF4A;
+  height: 96rpx;
+  width: 606rpx;
+  border-radius: 96rpx;
+  margin-top: 16rpx;
+  margin-bottom: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.rowView {
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+.rowView .titleView {
+  font-size: 32rpx;
+  font-weight: 600;
+  flex-shrink: 0;
+  padding: 32rpx;
+  padding-bottom: 8rpx;
+  min-width: 200rpx;
+}
+.rowView .imagesView {
+  margin: 0 16rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 28rpx;
+}
+.imageView {
+  display: flex;
+  position: relative;
+}
+.imageView .closeBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-bottom: 32rpx;
+  padding-left: 32rpx;
+  width: 32rpx;
+}
+.imageView .thumb {
+  width: 208rpx;
+  margin: 15rpx;
+}
+.rowContentView {
+  flex: 1;
+  margin: 0 32rpx;
+  border-bottom: 1rpx solid #DEDEDE;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.rowContentView .title {
+  font-size: 32rpx;
+  flex-shrink: 0;
+  padding: 32rpx 0;
+  min-width: 200rpx;
+}
+.rowContentView input {
+  flex: 1;
+  font-size: 28rpx;
+  text-align: right;
+}
+.rowContentView .icon {
+  width: 24rpx;
+  margin-left: 12rpx;
+}
+.changeChooseTypeView {
+  width: 750rpx;
+  background: white;
+  display: flex;
+  flex-direction: row;
+}
+.leftView {
+  width: 192rpx;
+  height: 100%;
+  background: #F7F7F7;
+  flex-shrink: 0;
+}
+.rightView {
+  flex: 1;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+.rightView .content {
+  display: flex;
+  flex: 1;
+}
+.scrollView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.leftItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 26rpx 32rpx;
+  padding-right: 24rpx;
+  background: #F7F7F7;
+}
+.leftItem .title {
+  font-size: 32rpx;
+  color: #5E635A;
+}
+.leftItem .icon {
+  width: 24rpx;
+  flex-shrink: 0;
+}
+.leftItemSel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 26rpx;
+  padding-bottom: 10rpx;
+  padding-left: 32rpx;
+  padding-right: 24rpx;
+  background: white;
+}
+.leftItemSel .title {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-right: 16rpx;
+}
+.leftItemSel .icon {
+  width: 24rpx;
+  flex-shrink: 0;
+}
+.leftSubItem {
+  padding: 20rpx 32rpx;
+  font-size: 28rpx;
+  color: #7C7C7C;
+  background: white;
+}
+.leftSubItemSel {
+  padding: 20rpx 32rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #57AF4A;
+  background: white;
+}
+.rightView .title {
+  font-size: 24rpx;
+  font-weight: 500;
+  margin: 32rpx;
+  margin-bottom: 0;
+}
+.goodsView {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 16rpx 0;
+  align-items: center;
+}
+.goodsView .thumbView {
+  position: relative;
+  width: 96rpx;
+  height: 96rpx;
+  margin-left: 32rpx;
+  margin-right: 16rpx;
+}
+.thumbView .thumb {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+.thumbView .icon {
+  width: 52rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.goodsView .name {
+  font-size: 32rpx;
+}
+.goodsView .addBtn {
+  width: 48rpx;
+  padding: 24rpx 32rpx;
+  margin-left: auto;
+}
+.choosePreView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.choosePreView .header {
+  width: 100%;
+  background: #F9FAFB;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.choosePreView .header .closeIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 34rpx;
+}
+.closeIcon .icon {
+  width: 22rpx;
+}
+.choosePreView .header .title {
+  font-size: 32rpx;
+  padding: 26rpx 0;
+  flex: 1;
+  text-align: center;
+  margin-right: 90rpx;
+}
+.choosePreView .content {
+  display: flex;
+  flex-direction: column;
+}
+.chooseUnitView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.chooseUnitView .header {
+  width: 100%;
+  background: #F9FAFB;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.chooseUnitView .header .closeIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 34rpx;
+}
+.closeIcon .icon {
+  width: 22rpx;
+}
+.chooseUnitView .header .title {
+  font-size: 32rpx;
+  padding: 26rpx 0;
+  flex: 1;
+  text-align: center;
+  margin-right: 90rpx;
+}
+.chooseUnitView .content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.chooseUnitView .content .scrollView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.preRow {
+  padding: 26rpx 32rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.preRow .title {
+  font-size: 32rpx;
+}
+.preRow .titleSel {
+  font-weight: 600;
+  font-size: 32rpx;
+  color: #57AF4A;
+}
+.preRow .icon {
+  width: 32rpx;
+  flex-shrink: 0;
+}
+.preBorder {
+  border-top: 1rpx solid #EAEAEA;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="listView">
+      <scroll-view class="listContentView" scroll-y >
+        <view class="rowView" @tap="toChooseType()">
+          <view class="rowContentView">
+            <view class="title">选择品类：</view>
+            <input placeholder="请选择" disabled>
+            <image class="icon" mode="widthFix" src="/images/icon_black_arrow_16.png">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="rowContentView">
+            <view class="title">商品名称：</view>
+            <input placeholder="如：黄心大土豆">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="rowContentView">
+            <view class="title">俗称：</view>
+            <input placeholder="如：马铃薯">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="rowContentView">
+            <view class="title">简称：</view>
+            <input placeholder="如：土豆">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="rowContentView">
+            <view class="title">俗称：</view>
+            <input placeholder="如：马铃薯">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="rowContentView" @tap="choosePreAction()">
+            <view class="title">是否为预包装食品</view>
+            <input placeholder="请选择" disabled>
+            <image class="icon" mode="widthFix" src="/images/icon_black_arrow_16.png">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="rowContentView" @tap="chooseUnitAction()">
+            <view class="title">计量单位</view>
+            <input placeholder="请选择" disabled>
+            <image class="icon" mode="widthFix" src="/images/icon_black_arrow_16.png">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="titleView">商品图片</view>
+          <view class="imagesView">
+            <view class="imageView" wx:for="{{9}}" wx:key="self">
+              <image class="thumb" mode="widthFix" src="/images/img_add-picture_104.png" />
+              <image class="closeBtn" mode="widthFix" src="/images/icon_clean_16.png" />
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="saveBtn">添加</view>
+    <!-- 选择品类弹窗 -->
+    <van-popup bind:close="onChooseTypeClose" show="{{ chooseTypeShow }}" position="bottom">
+      <view class="changeChooseTypeView" style="height: {{pageHeight * 0.8}}px">
+        <view class="leftView">
+          <scroll-view scroll-y class="scrollView">
+            <view class="leftItemSel">
+              <view class="title">蔬菜类</view>
+              <image class="icon" mode="widthFix" src="/images/icon_unfold_16.png" />
+            </view>
+            <view class="leftSubItem">
+              <view class="title">根茎类</view>
+            </view>
+            <view class="leftSubItemSel">
+              <view class="title">叶菜类</view>
+            </view>
+            <view class="leftSubItem">
+              <view class="title">根茎类</view>
+            </view>
+            <view class="leftItem" wx:for="{{10}}" wx:key="self">
+              <view class="title">蔬菜类</view>
+              <image class="icon" mode="widthFix" src="/images/icon_unfold_16.png" />
+            </view>
+          </scroll-view>
+        </view>
+        <view class="rightView">
+          <view class="title">叶菜类</view>
+          <view class="content">
+            <scroll-view scroll-y class="scrollView">
+              <view class="goodsView" wx:for="{{10}}" wx:key="self">
+                <view class="thumbView">
+                  <image class="thumb" src="" />
+                  <image class="icon" mode="widthFix" src="/images/img_superscript_hg.png" />
+                </view>
+                <view class="name">大白菜</view>
+                <image class="addBtn" mode="widthFix" src="/images/icon_add_24px.png" />
+              </view>
+            </scroll-view>
+          </view>
+        </view>
+      </view>
+    </van-popup>
+    <!-- 选择是否为预包装食品弹窗 -->
+    <van-popup show="{{ choosePreShow }}" position="bottom" bind:close="closeChoosePreAction">
+      <view class="choosePreView">
+        <view class="header">
+          <view class="closeIcon" @tap="closeChoosePreAction()">
+            <image class="icon" mode="widthFix" src="/images/icon_actionsheet_closed_12.png" />
+          </view>
+          <view class="title">是否为预包装食品</view>
+        </view>
+        <view class="content">
+          <view class="preRow">
+            <view class="titleSel">
+              是
+            </view>
+            <image class="icon" mode="widthFix" src="/images/Icon_Outlined_done_24.png"/>
+          </view>
+          <view class="preRow preBorder">
+            <view class="title">
+              否
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-popup>
+    <!-- 选择计量单位弹窗 -->
+    <van-popup show="{{ chooseUnitShow }}" position="bottom" bind:close="closeChooseUnitAction">
+      <view class="chooseUnitView" style="height: {{pageHeight * 0.5}}px">
+        <view class="header">
+          <view class="closeIcon" @tap="closeChooseUnitAction()">
+            <image class="icon" mode="widthFix" src="/images/icon_actionsheet_closed_12.png" />
+          </view>
+          <view class="title">计量单位</view>
+        </view>
+        <view class="content">
+          <scroll-view scroll-y class="scrollView">
+            <view class="preRow">
+              <view class="titleSel">
+                公斤
+              </view>
+              <image class="icon" mode="widthFix" src="/images/Icon_Outlined_done_24.png"/>
+            </view>
+            <view class="preRow preBorder" wx:for="{{10}}" wx:key="self">
+              <view class="title">
+                斤
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-popup>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class GoodsEdit extends wepy.page {
+    config = {
+      navigationBarTitleText: '商品管理',
+      "usingComponents": {
+        "van-popup": "../../components/van/popup"
+      }
+    }
+    components = {
+    }
+    data = {
+      chooseTypeShow: false,
+      choosePreShow: false,
+      chooseUnitShow: false,
+      pageHeight: 0
+    }
+    computed = {
+    }
+    methods = {
+      toChooseType: function() {
+        this.chooseTypeShow = true
+      },
+      onChooseTypeClose: function() {
+        this.chooseTypeShow = false
+      },
+      choosePreAction: function() {
+        this.choosePreShow = true
+      },
+      closeChoosePreAction: function() {
+        this.choosePreShow = false
+      },
+      chooseUnitAction: function() {
+        this.chooseUnitShow = true
+      },
+      closeChooseUnitAction: function() {
+        this.chooseUnitShow = false
+      }
+    }
+    events = {
+    }
+    onLoad() {
+      let that = this
+      const query = wx.createSelectorQuery()
+      query.select('.container').boundingClientRect()
+      query.exec(function(res){
+        console.log(res[0].height)
+        that.pageHeight = res[0].height
+        that.$apply()
+      })
+    }
+  }
+</script>

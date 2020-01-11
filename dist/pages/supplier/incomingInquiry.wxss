@@ -1,0 +1,80 @@
+
+.container._d11aeca {
+  padding: 8rpx 0;
+}
+.rowView._d11aeca {
+  width: 718rpx;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius:16rpx;
+  margin: 8rpx auto;
+}
+.titleView._d11aeca {
+  margin: 0 32rpx;
+  padding: 24rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #F4F4F4;
+}
+.titleView .title._d11aeca {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-right: 16rpx;
+}
+.titleView .showDetailBtn._d11aeca {
+  padding: 4rpx 24rpx;
+  font-size: 28rpx;
+  color: #5E635A;
+  border-radius: 32rpx;
+  border:2rpx solid rgba(94,99,90,1);
+}
+.listView._d11aeca {
+  margin: 0 32rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom:1rpx solid #EAEAEA;
+  padding-top: 12rpx;
+  padding-bottom: 10rpx;
+}
+.listView .listItemView._d11aeca {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 18rpx 0;
+}
+.listItemView .title._d11aeca {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.listItemView .showGoodsBtn._d11aeca {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  font-size: 32rpx;
+  color: #57AF4A;
+}
+.showGoodsBtn .btnTitle._d11aeca {
+  margin-right: 8rpx;
+}
+.showGoodsBtn .icon._d11aeca {
+  width: 32rpx;
+}
+.rowView .moreView._d11aeca {
+  height: 88rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.rowView .moreView .title._d11aeca {
+  color: #9B9B9B;
+  font-size: 28rpx;
+  margin-right: 16rpx;
+}
+.rowView .moreView .icon._d11aeca {
+  width: 32rpx;
+}

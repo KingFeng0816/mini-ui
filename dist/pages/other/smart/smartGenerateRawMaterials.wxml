@@ -1,0 +1,73 @@
+
+  <view class="container _09898b5">
+    <view class="timeView _09898b5">
+      <view class="title _09898b5">就餐时间</view>
+      <view class="value _09898b5">2019-12-16</view>
+    </view>
+    <view class="timeView _09898b5">
+      <view class="title _09898b5">就餐人数</view>
+      <view class="value _09898b5">100</view>
+    </view>
+    <view class="listContentView _09898b5">
+      <scroll-view scroll-y class="listView _09898b5">
+        <view class="menuView _09898b5">
+          <view class="header _09898b5">
+            <view class="title _09898b5">菜谱</view>
+          </view>
+          <view class="menuItemView _09898b5"  wx:for="{{3}}" wx:key="self">
+            <image class="thumb _09898b5" src=""/>
+            <view class="titleView _09898b5">醋溜白菜</view>
+            <view class="num _09898b5">x2</view>
+          </view>
+        </view>
+        <view class="menuView _09898b5"  wx:for="{{3}}" wx:key="self">
+          <view class="header _09898b5" bindtap="changeSupplier" data-wpychangesupplier-a="">
+            <view class="title _09898b5">叶菜类</view>
+            <view class="subTitle _09898b5">文运街智慧生鲜市场</view>
+            <image class="icon _09898b5" mode="widthFix" src="../../../images/icon_black_arrow_16.png"/>
+          </view>
+          <view class="goodsView _09898b5" wx:for="{{3}}" wx:key="self">
+            <view class="goodsThumb _09898b5">
+              <image class="thumb _09898b5" src=""/>
+              <image class="state _09898b5" mode="widthFix" src="../../../images/img_superscript_hg.png"/>
+            </view>
+            <view class="detail _09898b5">
+              <view class="titleView _09898b5">
+                <view class="_09898b5">醋溜白菜</view>
+                <view class="priceView _09898b5">
+                  ￥79.6
+                </view>
+              </view>
+              <view class="descView _09898b5">
+                <view class="price _09898b5">1.99元/斤</view>
+                <view class="num _09898b5">40斤</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="submitBtn _09898b5" bindtap="toSubmit" data-wpytosubmit-a="">
+      提交订单
+    </view>
+    <van-popup show="{{ changeSupplierViewShow }}" position="bottom" class="_09898b5">
+      <view class="changeSupplierView _09898b5">
+        <view class="header _09898b5">
+          <view class="closeIcon _09898b5" bindtap="closeChooseAreaAction" data-wpyclosechooseareaaction-a="">
+            <image class="icon _09898b5" mode="widthFix" src="../../../images/icon_actionsheet_closed_12.png"/>
+          </view>
+          <view class="title _09898b5">供应商</view>
+          <view class="confirmBtn _09898b5">确定</view>
+        </view>
+        <view class="content _09898b5">
+          <scroll-view scroll-y class="listView _09898b5">
+            <view class="listItem _09898b5"  wx:for="{{10}}" wx:key="self">
+              <view class="listItemContent listItemContentSel _09898b5">
+                新城区
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-popup>
+  </view>

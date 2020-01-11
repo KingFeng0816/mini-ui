@@ -1,0 +1,230 @@
+
+page._09898b5 {
+  height: 100%;
+}
+.container._09898b5 {
+  height: 100%;
+}
+.timeView._09898b5 {
+  width: 654rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 16rpx;
+  padding: 32rpx;
+  background: white;
+  border-radius: 16rpx;
+}
+.timeView .title._09898b5 {
+  font-size: 36;
+  font-weight: 600;
+}
+.timeView .value._09898b5 {
+  margin-left: auto;
+  font-size: 32rpx;
+}
+.menuView._09898b5, .supplierView._09898b5 {
+  width: 718rpx;
+  margin: 0 auto;
+  margin-bottom: 16rpx;
+  background: white;
+  border-radius: 16rpx;
+  padding-bottom: 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+.menuView .header._09898b5 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 32rpx;
+  padding-top: 28rpx;
+  padding-bottom: 24rpx;
+}
+.menuView .header .icon._09898b5 {
+  flex-shrink: 0;
+  width: 32rpx;
+  margin-left: 8rpx;
+}
+.menuView .title._09898b5 {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.menuView .subTitle._09898b5 {
+  flex: 1;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.menuItemView._09898b5 {
+  width: 100%;
+  padding: 8rpx 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.menuItemView .thumb._09898b5 {
+  flex-shrink: 0;
+  width: 96rpx;
+  height: 96rpx;
+  margin-left: 32rpx;
+  margin-right: 16rpx;
+  background: #eee;
+}
+.menuItemView .titleView._09898b5 {
+  flex: 1;
+  font-size: 32rpx;
+  color: #15200C;
+  margin-right: 16rpx;
+}
+.menuItemView .num._09898b5 {
+  flex-shrink: 0;
+  font-size: 28rpx;
+  color: #9C9C9C;
+  margin-right: 32rpx;
+}
+.goodsView._09898b5 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24rpx 32rpx;
+}
+.goodsView .goodsThumb._09898b5 {
+  flex-shrink: 0;
+  position: relative;
+  width: 96rpx;
+  height: 96rpx;
+  margin-right: 16rpx;
+}
+.goodsThumb .thumb._09898b5 {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+.goodsThumb .state._09898b5 {
+  width: 52rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.goodsView .descView._09898b5 {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  font-size: 28rpx;
+  color: #9c9c9c;
+  margin-top: 12rpx;
+}
+.goodsView .titleView._09898b5 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.goodsView .descView .num._09898b5 {
+  margin-left: 36rpx;
+}
+.priceView._09898b5 {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.goodsView .detail._09898b5 {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 16rpx;
+}
+.listContentView._09898b5 {
+  margin-top: 16rpx;
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
+.listView._09898b5 {
+  width: 100%;
+  height: 100%;
+}
+.submitBtn._09898b5 {
+  margin-top: 40rpx;
+  margin-bottom: 48rpx;
+  width: 606rpx;
+  height: 96rpx;
+  background: #57AF4A;
+  border-radius: 96rpx;
+  color: white;
+  font-size: 32rpx;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.changeSupplierView._09898b5 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.changeSupplierView .header._09898b5 {
+  width: 100%;
+  background: #F9FAFB;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.changeSupplierView .header .closeIcon._09898b5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 34rpx;
+}
+.closeIcon .icon._09898b5 {
+  width: 22rpx;
+}
+.changeSupplierView .header .title._09898b5 {
+  font-size: 32rpx;
+  padding: 26rpx 0;
+}
+.changeSupplierView .header .confirmBtn._09898b5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #57AF4A;
+  font-size: 32rpx;
+  padding: 0 32rpx;
+}
+.changeSupplierView .content._09898b5 {
+  width: 100%;
+  height: 624rpx;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.listView._09898b5 {
+  margin-top: 1rpx;
+  width: 100%;
+  display: flex;
+  flex: 1;
+}
+.listItem._09898b5 {
+  margin-top: 1rpx;
+  display: flex;
+  width: 100%;
+  background: white;
+}
+.listItemContent._09898b5 {
+  flex: 1;
+  font-size: 32rpx;
+  margin: 0 32rpx;
+  padding: 26rpx 0;
+  border-bottom: 1rpx solid #EAEAEA;
+}
+.listItemContentSel._09898b5 {
+  font-weight: 500;
+  color: #57AF4A;
+}

@@ -1,0 +1,307 @@
+<style scoped>
+.container {
+  padding-bottom: 16rpx;
+}
+.topView {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100rpx;
+}
+.topView .bgView {
+  background: #57AF4A;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.bgView .logo{
+  margin-top: 48rpx;
+  width: 128rpx;
+  height: 128rpx;
+  border:4rpx solid white;
+  border-radius:16rpx;
+}
+.bgView .title{
+  font-size:36rpx;
+  font-weight:500;
+  margin: 0 32rpx;
+  text-align: center;
+  color: white;
+  margin-top: 32rpx;
+  margin-bottom: 76rpx;
+}
+.coverView {
+  position: absolute;
+  left: 32rpx;
+  right: 32rpx;
+  bottom: 12rpx;
+  height: 144rpx;
+  border-radius: 16rpx;
+  background: white;
+  box-shadow:0rpx 4rpx 12rpx 0rpx rgba(215,215,215,0.4);
+}
+.coverContentView {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.coverMainView {
+  flex: 1;
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.coverMainView .itemView {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.coverMainView .itemView .icon {
+  width: 64rpx;
+}
+.coverMainView .itemView .title {
+  font-size: 28rpx;
+}
+.photoView {
+  width: 100%;
+  background: white;
+  margin-top: 16rpx;
+  padding-bottom: 32rpx;
+}
+.headerView {
+  padding: 32rpx;
+  padding-bottom: 20rpx;
+}
+.headerView .title {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.photoView .scrollView {
+  width: 100%;
+  white-space: nowrap;
+}
+.scrollView .contentView {
+  display: inline-block;
+  padding: 0 16rpx;
+}
+.photoItemView {
+  width: 464rpx;
+  height: 272rpx;
+  margin: 0 16rpx;
+  background: #eee;
+  border-radius: 8rpx;
+  display: inline-block;
+}
+.photoItemView .photo {
+  width: 100%;
+  height: 100%;
+}
+.superviseView {
+  margin-top: 16rpx;
+  width: 100%;
+  background: white;
+  padding: 16rpx 0;
+}
+.infoRowView {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16rpx 0;
+}
+.infoRowView .title {
+  margin-left: 32rpx;
+  flex-shrink: 0;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.infoRowView .value {
+  flex: 1;
+  margin-right: 32rpx;
+  font-size: 32rpx;
+  color: #5E635A;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="topView">
+      <view class="bgView">
+        <image class="logo" src="" />
+        <view class="title">文运街智慧生鲜市场</view>
+      </view>
+      <view class="coverView">
+        <view class="coverContentView">
+          <view class="coverMainView">
+            <view class="itemView" @tap="enquiryQualification()">
+              <image class="icon" mode="widthFix" src="../../images/icon_zzcx_32.png" />
+              <view class="title">
+                资质查询
+              </view>
+            </view>
+            <view class="itemView" @tap="incomingInquiry()">
+              <image class="icon" mode="widthFix" src="../../images/icon_lhcx_32.png" />
+              <view class="title">
+                来货查询
+              </view>
+            </view>
+            <view class="itemView" @tap="testReport()">
+              <image class="icon" mode="widthFix" src="../../images/icon_jcxx_32.png" />
+              <view class="title">
+                检测信息
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="photoView">
+      <view class="headerView">
+        <view class="title">供应商照片</view>
+      </view>
+      <scroll-view scroll-x class="scrollView">
+        <view class="contentView">
+          <view class="photoItemView" wx:for="{{10}}" wx:key="self">
+            <image class="photo" src="" />
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="superviseView">
+      <view class="infoRowView">
+        <view class="title">
+          监督部门：
+        </view>
+        <view class="value van-ellipsis">
+          大东桥局市场监督管理所
+        </view>
+      </view>
+      <view class="infoRowView">
+        <view class="title">
+          地址：
+        </view>
+        <view class="value van-ellipsis">
+          湖南省衡阳石鼓区南起司前街168号
+        </view>
+      </view>
+      <view class="infoRowView">
+        <view class="title">
+          所长：
+        </view>
+        <view class="value van-ellipsis">
+          邹捷
+        </view>
+      </view>
+      <view class="infoRowView">
+        <view class="title">
+          监督人员：
+        </view>
+        <view class="value van-ellipsis">
+          徐殿臣
+        </view>
+      </view>
+      <view class="infoRowView">
+        <view class="title">
+          办公电话：
+        </view>
+        <view class="value van-ellipsis">
+          010-8973215
+        </view>
+      </view>
+      <view class="infoRowView">
+        <view class="title">
+          举报电话：
+        </view>
+        <view class="value van-ellipsis">
+          010-8973215
+        </view>
+      </view>
+    </view>
+    <view class="superviseView">
+      <view class="infoRowView">
+        <view class="title">
+          主办方：
+        </view>
+        <view class="value van-ellipsis">
+          津桥农贸市场
+        </view>
+      </view>
+      <view class="infoRowView">
+        <view class="title">
+          法人代表：
+        </view>
+        <view class="value van-ellipsis">
+          秦守发
+        </view>
+      </view>
+      <view class="infoRowView">
+        <view class="title">
+          负责人：
+        </view>
+        <view class="value van-ellipsis">
+          龚晓东
+        </view>
+      </view>
+      <view class="infoRowView">
+        <view class="title">
+          安全负责人：
+        </view>
+        <view class="value van-ellipsis">
+          张慧君
+        </view>
+      </view>
+      <view class="infoRowView">
+        <view class="title">
+          公开电话：
+        </view>
+        <view class="value van-ellipsis">
+          010-8973215
+        </view>
+      </view>
+      <view class="infoRowView">
+        <view class="title">
+          举报电话：
+        </view>
+        <view class="value van-ellipsis">
+          010-8973215
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class SupplierDetail extends wepy.page {
+    config = {
+    }
+    components = {
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+      enquiryQualification: function() {
+        this.$navigate({url:"/pages/supplier/qualificationEnquiry"})
+      },
+      incomingInquiry: function() {
+        this.$navigate({url:"/pages/supplier/incomingInquiry"})
+      },
+      testReport: function() {
+        this.$navigate({url:"/pages/supplier/testReport"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

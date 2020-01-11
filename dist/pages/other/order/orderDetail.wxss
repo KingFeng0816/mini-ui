@@ -1,0 +1,774 @@
+
+.container._4b2f352, page._4b2f352 {
+  height: 100%;
+}
+.container .scrollView._4b2f352 {
+  flex: 1;
+  display: flex;
+}
+.container .scrollView .listView._4b2f352 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.topView._4b2f352 {
+  width: 718rpx;
+  margin: 16rpx;
+  background: white;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 48rpx;
+}
+.topView .stateView._4b2f352 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 48rpx;
+  align-items: center;
+}
+.topView .stateView .title._4b2f352 {
+  color: #57AF4A;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.topView .stateView .icon._4b2f352 {
+  width: 32rpx;
+  margin-left: 8rpx;
+  flex-shrink: 0;
+}
+.topView .desc._4b2f352 {
+  margin: 32rpx;
+  margin-bottom: 0;
+  font-size: 28rpx;
+}
+.topView .time._4b2f352 {
+  color: #9C9C9C;
+  font-size: 28rpx;
+  margin-top: 16rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+}
+.topView .actionView._4b2f352 {
+  margin-top: 48rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.topView .actionView .btn._4b2f352 {
+  margin: 0 24rpx;
+  padding: 12rpx 40rpx;
+  border-radius: 64rpx;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.topView .actionView .btn .icon._4b2f352 {
+  width: 24rpx;
+  margin-right: 6rpx;
+}
+.greenRoundBtn._4b2f352 {
+  padding: 12rpx 32rpx;
+  color: #57AF4A;
+  border: 2rpx solid #57AF4A;
+  font-weight: 500;
+}
+.cancelBtn._4b2f352 {
+  color: #5E635A;
+  border: 2rpx solid #5E635A;
+}
+.greenBtn._4b2f352 {
+  background: #57AF4A;
+  color: white;
+  font-weight: 500;
+}
+.supplierView._4b2f352 {
+  width: 718rpx;
+  margin: 0 16rpx;
+  margin-bottom: 16rpx;
+  background: white;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+}
+.supplierView .content._4b2f352 {
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: column;
+}
+.header._4b2f352 {
+  padding: 20rpx 0;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2rpx solid #F4F4F4;
+  align-items: center;
+  flex: 1;
+}
+.header .title._4b2f352 {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-right: 16rpx;
+}
+.header .addGoodsBtn._4b2f352 {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header .addGoodsBtn .icon._4b2f352 {
+  width: 24rpx;
+  margin-left: 8rpx;
+}
+.header .addGoodsBtn .name._4b2f352 {
+  font-size: 32rpx;
+  color: #57AF4A;
+  font-weight: 600;
+}
+.header .contact._4b2f352 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12rpx 18rpx;
+  border-radius: 56rpx;
+  margin-left: auto;
+  border: 2rpx solid #57AF4A;
+}
+.header .contact .icon._4b2f352 {
+  width: 32rpx;
+  margin-right: 4rpx;
+}
+.header .contact .name._4b2f352 {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #57AF4A;
+}
+.supplierView .listView._4b2f352 {
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rpx;
+  padding-bottom: 24rpx;
+}
+.itemRow._4b2f352 {
+  padding: 24rpx 0;
+  display: flex;
+  flex-direction: row;
+}
+.itemRow .selBtn._4b2f352 {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 16rpx;
+}
+.itemRow .selBtn .icon._4b2f352 {
+  width: 32rpx;
+}
+.itemRow .thumbView._4b2f352 {
+  flex-shrink: 0;
+  position: relative;
+  width: 96rpx;
+  height: 96rpx;
+  margin-right: 32rpx;
+}
+.thumbView .thumb._4b2f352 {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+.thumbView .icon._4b2f352 {
+  width: 52rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.itemRow .centerView._4b2f352 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.itemRow .centerView .top._4b2f352 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.itemRow .centerView .top .title._4b2f352 {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.itemRow .centerView .top .returnBtn._4b2f352 {
+  padding: 0 20rpx;
+  display: flex;
+  border-radius: 44rpx;
+  background: #FD8E251F;
+  color: #FD8E25;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.itemRow .centerView .top .tracingSourceBtn._4b2f352 {
+  padding: 0 12rpx;
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 44rpx;
+  background: #DBDBDB4D;
+}
+.itemRow .centerView .top .tracingSourceBtn .name._4b2f352 {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #5E635A;
+}
+.itemRow .centerView .top .tracingSourceBtn .icon._4b2f352 {
+  width: 20rpx;
+  margin-left: 4rpx;
+}
+.itemRow .centerView .bottom._4b2f352 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.itemRow .centerView .bottom .price._4b2f352 {
+  font-size: 28rpx;
+  color: #9C9C9C;
+}
+.itemRow .centerView .bottom .num._4b2f352 {
+  margin-left: 36rpx;
+  font-size: 28rpx;
+  color: #9C9C9C;
+}
+.itemRow .centerView .bottom .totalPrice._4b2f352 {
+  margin-left: auto;
+  font-size: 28rpx;
+  color: #9C9C9C;
+  flex-shrink: 0;
+}
+.itemRow .centerView .bottom .editIcon._4b2f352 {
+  width: 32rpx;
+  padding: 0 12rpx;
+  flex-shrink: 0;
+}
+.itemRow .centerView .bottom .returnPrice._4b2f352 {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-left: auto;
+  font-size: 28rpx;
+}
+.itemRow .centerView .bottom .returnPrice .yuan._4b2f352 {
+  font-size: 20rpx;
+}
+.itemRow .centerView .top .totalPriceView._4b2f352 {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-left: auto;
+}
+.itemRow .centerView .top .totalPriceView .yuan._4b2f352 {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #15200C;
+}
+.itemRow .centerView .top .totalPriceView .price._4b2f352 {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #15200C;
+}
+.supplierView .bottomActionView._4b2f352 {
+  display: flex;
+  flex-direction: row;
+  padding: 24rpx 0;
+  border-top: 2rpx solid #F4F4F4;
+  align-items: center;
+}
+.supplierView .bottomActionView .selBtn._4b2f352 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.supplierView .bottomActionView .selBtn .icon._4b2f352 {
+  width: 32rpx;
+  margin-right: 16rpx;
+}
+.supplierView .bottomActionView .selBtn .name._4b2f352 {
+  font-size: 28rpx;
+}
+.supplierView .bottomActionView .confirmBtn._4b2f352 {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #57AF4A;
+  margin-left: auto;
+}
+.supplierView .totalView._4b2f352 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 24rpx 0;
+  border-top: 2rpx solid #F4F4F4;
+  align-items: baseline;
+}
+.supplierView .totalView .title._4b2f352 {
+  font-size: 32rpx;
+  color: #15200C;
+}
+.supplierView .totalView .yuan._4b2f352 {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #FF3535;
+}
+.supplierView .totalView .price._4b2f352 {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FF3535;
+}
+.normalBlock._4b2f352 {
+  width: 718rpx;
+  margin: 0 16rpx;
+  margin-bottom: 16rpx;
+  background: white;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+}
+.normalBlock .content._4b2f352 {
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: column;
+}
+.normalBlock .content .bottom._4b2f352 {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15rpx;
+  padding-bottom: 25rpx;
+}
+.normalBlock .content .value._4b2f352 {
+  font-size: 32rpx;
+  color: #9C9C9C;
+  margin-right: 8rpx;
+  margin-left: auto;
+}
+.normalBlock .header .icon._4b2f352 {
+  width: 32rpx;
+}
+.normalBlock .content .dataRow._4b2f352 {
+  padding: 15rpx 0;
+  display: flex;
+  flex-direction: row;
+  font-size: 32rpx;
+  color: #5E635A;
+}
+.normalBlock .content .dataRow .title._4b2f352 {
+  flex-shrink: 0;
+}
+.trackOrderView._4b2f352 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.trackOrderView .titleView._4b2f352 {
+  width: 100%;
+  background: #F9FAFB;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.trackOrderView .titleView .closeIcon._4b2f352 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 34rpx;
+}
+.titleView .closeIcon .icon._4b2f352 {
+  width: 22rpx;
+}
+.trackOrderView .titleView .title._4b2f352 {
+  font-size: 32rpx;
+  padding: 26rpx 0;
+  flex: 1;
+  margin-right: 90rpx;
+  text-align: center;
+}
+.trackOrderView .content._4b2f352 {
+  margin: 0 32rpx;
+  padding: 12rpx 0;
+  border-top: 1rpx solid #EAEAEA;
+}
+.trackOrderView .rowView._4b2f352 {
+  display: flex;
+  flex-direction: row;
+}
+.trackOrderView .rowView .leftView._4b2f352 {
+  flex-shrink: 0;
+  margin-left: 16rpx;
+  margin-right: 14rpx;
+  width: 16rpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.trackOrderView .rowView .leftView .topLineView._4b2f352 {
+  width: 2rpx;
+  margin-top: 38rpx;
+  background: #CFCFCF;
+}
+.trackOrderView .rowView .leftView .bottomLineView._4b2f352 {
+  width: 2rpx;
+  height: 38rpx;
+  background: #CFCFCF;
+}
+.trackOrderView .rowView .leftView .lineView._4b2f352 {
+  width: 2rpx;
+  background: #CFCFCF;
+}
+.trackOrderView .rowView .leftView .iconSel._4b2f352 {
+  position: absolute;
+  top: 38rpx;
+  left: 0;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 16rpx;
+  background: #57AF4A;
+}
+.trackOrderView .rowView .leftView .icon._4b2f352 {
+  position: absolute;
+  top: 38rpx;
+  left: 0;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 16rpx;
+  background: #CFCFCF;
+}
+.trackOrderView .rowView .center._4b2f352 {
+  margin: 24rpx 0;
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.trackOrderView .rowView .centerSel._4b2f352 {
+  margin: 24rpx 0;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #57AF4A;
+}
+.trackOrderView .rowView .rightView._4b2f352 {
+  margin-top: 26rpx;
+  flex-shrink: 0;
+  font-size: 28rpx;
+  color: #7C7C7C;
+  margin-right: 16rpx;
+  margin-left: auto;
+}
+.itemRow .centerView .numView._4b2f352 {
+  margin-left: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.itemRow .centerView .numView .name._4b2f352 {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-right: 16rpx;
+}
+.numView .numIcon._4b2f352 {
+  width: 48rpx;
+}
+.inputView input._4b2f352 {
+  font-size: 28rpx;
+  height: 100%;
+  text-align: center;
+  width: 64rpx;
+}
+.finalConfirmBtn._4b2f352 {
+  color: white;
+  font-size: 32rpx;
+  font-weight: 500;
+  padding: 26rpx 0;
+  width: 606rpx;
+  margin-top: 30rpx;
+  background: #57AF4A;
+  border-radius: 96rpx;
+  margin-bottom: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkView._4b2f352 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 872rpx;
+}
+.checkView .titleView._4b2f352 {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-left: 32rpx;
+  margin-top: 32rpx;
+  margin-bottom: 12rpx;
+}
+.checkView .content._4b2f352 {
+  flex: 1;
+  padding: 0 32rpx;
+  display: flex;
+}
+.checkView .content .listView._4b2f352 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.checkView .actionView._4b2f352 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 40rpx 0;
+  margin-bottom: 14rpx;
+}
+.checkView .checkViewCancelBtn._4b2f352 {
+  margin: 0 15rpx;
+  padding: 16rpx 84rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #57AF4A;
+  background: #0000000D;
+  border-radius: 80rpx;
+}
+.checkView .checkViewConfirmBtn._4b2f352 {
+  margin: 0 15rpx;
+  padding: 16rpx 84rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: white;
+  background: #57AF4A;
+  border-radius: 80rpx;
+}
+.changePriceView._4b2f352 {
+  width: 640rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24rpx;
+  background: white;
+}
+.changePriceView .title._4b2f352 {
+  font-size: 34rpx;
+  font-weight: 500;
+  margin: 64rpx auto;
+  margin-bottom: 50rpx;
+}
+.changePriceView .content._4b2f352 {
+  flex: 1;
+  display: flex;
+  margin: 0 48rpx;
+  margin-bottom: 64rpx;
+  border-bottom: 2rpx solid #0000001A;
+}
+.changePriceView .content input._4b2f352 {
+  padding: 14rpx 0;
+  font-size: 34rpx;
+}
+.changePriceView .actionsView._4b2f352 {
+  border-top: 2rpx solid #0000001A;
+  display: flex;
+  flex-direction: row;
+  height: 110rpx;
+}
+.changePriceView .actionsView .cancel._4b2f352 {
+  flex: 1;
+  font-size: 34rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2rpx solid #0000001A;
+}
+.changePriceView .actionsView .confirm._4b2f352 {
+  flex: 1;
+  color: #57AF4A;
+  font-size: 34rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chooseTruckView._4b2f352 {
+  width: 100%;
+  height: 788rpx;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.chooseTruckView .titleView._4b2f352 {
+  width: 100%;
+  background: #F9FAFB;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.chooseTruckView .titleView .confirmBtn._4b2f352 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #57AF4A;
+  font-size: 32rpx;
+  padding: 0 32rpx;
+}
+.chooseTruckView .titleView .closeIcon._4b2f352 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 34rpx;
+}
+.titleView .closeIcon .icon._4b2f352 {
+  width: 22rpx;
+}
+.chooseTruckView .titleView .title._4b2f352 {
+  font-size: 32rpx;
+  padding: 26rpx 0;
+  flex: 1;
+  text-align: center;
+}
+.chooseTruckView .content._4b2f352 {
+  flex: 1;
+  display: flex;
+  width: 100%;
+}
+.chooseTruckView .content .listView._4b2f352 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.chooseTruckView .content .listView .selRow._4b2f352 {
+  color: #57AF4A;
+  font-size: 32rpx;
+  font-weight: 500;
+  border-bottom: 1rpx solid #EAEAEA;
+  margin: 0 32rpx;
+  padding: 26rpx 0;
+}
+.chooseTruckView .content .listView .row._4b2f352 {
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #EAEAEA;
+  margin: 0 32rpx;
+  padding: 26rpx 0;
+}
+.changeChooseTypeView._4b2f352 {
+  width: 750rpx;
+  background: white;
+  display: flex;
+  flex-direction: row;
+}
+.changeChooseTypeView .leftView._4b2f352 {
+  width: 192rpx;
+  height: 100%;
+  background: #F7F7F7;
+  flex-shrink: 0;
+}
+.changeChooseTypeView .rightView._4b2f352 {
+  flex: 1;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+.changeChooseTypeView .rightView .content._4b2f352 {
+  display: flex;
+  flex: 1;
+}
+.changeChooseTypeView .scrollView._4b2f352 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.changeChooseTypeView .leftItem._4b2f352 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 26rpx 32rpx;
+  padding-right: 24rpx;
+  background: #F7F7F7;
+}
+.changeChooseTypeView .leftItem .title._4b2f352 {
+  font-size: 32rpx;
+  color: #5E635A;
+}
+.changeChooseTypeView .leftItem .icon._4b2f352 {
+  width: 24rpx;
+  flex-shrink: 0;
+}
+.changeChooseTypeView .leftItemSel._4b2f352 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 26rpx;
+  padding-bottom: 10rpx;
+  padding-left: 32rpx;
+  padding-right: 24rpx;
+  background: white;
+}
+.changeChooseTypeView .leftItemSel .title._4b2f352 {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-right: 16rpx;
+}
+.changeChooseTypeView .leftItemSel .icon._4b2f352 {
+  width: 24rpx;
+  flex-shrink: 0;
+}
+.changeChooseTypeView .leftSubItem._4b2f352 {
+  padding: 20rpx 32rpx;
+  font-size: 28rpx;
+  color: #7C7C7C;
+  background: white;
+}
+.changeChooseTypeView .leftSubItemSel._4b2f352 {
+  padding: 20rpx 32rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #57AF4A;
+  background: white;
+}
+.changeChooseTypeView .rightView .title._4b2f352 {
+  font-size: 24rpx;
+  font-weight: 500;
+  margin: 32rpx;
+  margin-bottom: 0;
+}
+.changeChooseTypeView .goodsView._4b2f352 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 16rpx 0;
+  align-items: center;
+}
+.changeChooseTypeView .goodsView .thumbView._4b2f352 {
+  position: relative;
+  width: 96rpx;
+  height: 96rpx;
+  margin-left: 32rpx;
+  margin-right: 16rpx;
+}
+.changeChooseTypeView .thumbView .thumb._4b2f352 {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+.changeChooseTypeView .thumbView .icon._4b2f352 {
+  width: 52rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.changeChooseTypeView .goodsView .name._4b2f352 {
+  font-size: 32rpx;
+}
+.changeChooseTypeView .goodsView .addBtn._4b2f352 {
+  width: 48rpx;
+  padding: 24rpx 32rpx;
+  margin-left: auto;
+}

@@ -1,0 +1,93 @@
+<style scoped>
+.container {
+  padding-bottom: 32rpx;
+}
+.blockView {
+  width: 686rpx;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0 32rpx;
+  padding-bottom: 12rpx;
+}
+.blockView .header {
+  display: flex;
+  flex-direction: row;
+  padding: 12rpx 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.blockView .header .title {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.blockView .header .num {
+  font-size: 28rpx;
+}
+.blockView .content {
+  display: flex;
+  flex-direction: column;
+}
+.blockView .goodView {
+  display: flex;
+  flex-direction: row;
+  padding: 16rpx 0;
+  align-items: center;
+}
+.blockView .goodView .thumb {
+  width: 96rpx;
+  height: 96rpx;
+  background: #eee;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+.blockView .goodView .title {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.blockView .goodView .num {
+  flex-shrink: 0;
+  margin-left: auto;
+  font-size: 32rpx;
+  color: #9C9C9C;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="blockView">
+      <view class="header">
+        <view class="title">晚餐</view>
+        <view class="num">就餐人数：100人</view>
+      </view>
+      <view class="content">
+        <view class="goodView" wx:for="{{5}}" wx:key="self">
+          <image class="thumb"/>
+          <view class="title van-ellipsis">西红柿炒鸡蛋</view>
+          <view class="num">x30</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class SmartDetailAll extends wepy.page {
+    config = {
+      navigationBarTitleText: '订单详情'
+    }
+    components = {
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

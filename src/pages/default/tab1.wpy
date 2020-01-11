@@ -1,0 +1,34 @@
+<style scoped>
+</style>
+<template>
+  <view class="container">
+    <supplierBuy wx:if="{{isSupplier}}" />
+    <smartOrder wx:else />
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import SmartOrder from "../../components/smartOrder";
+  import SupplierBuy from "../../components/supplierBuy";
+
+  export default class Tab1 extends wepy.page {
+    config = {
+    }
+    components = {
+      smartOrder: SmartOrder,
+      supplierBuy: SupplierBuy
+    }
+    data = {
+      isSupplier: false
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

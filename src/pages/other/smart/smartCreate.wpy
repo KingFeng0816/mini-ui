@@ -1,0 +1,255 @@
+<style scoped>
+page {
+  height: 100%;
+}
+.container {
+  height: 100%;
+}
+.timeView {
+  width: 654rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 16rpx auto;
+  padding: 32rpx;
+  background: white;
+  border-radius: 16rpx;
+}
+.timeView .title {
+  font-size: 36;
+  font-weight: 600;
+}
+.timeView .value {
+  margin: 0 16rpx;
+  margin-left: auto;
+  font-size: 32rpx;
+}
+.timeView .icon {
+  width: 32rpx;
+}
+.listItem {
+  width: 718rpx;
+  margin: 0 16rpx;
+  margin-bottom: 16rpx;
+  border-radius: 16rpx;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border-right: 16rpx;
+}
+.listItem .header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 28rpx;
+  padding-bottom: 20rpx;
+}
+.listItem .header .lineView {
+  width: 8rpx;
+  height: 40rpx;
+  border-right: 4rpx;
+}
+.yellow {
+  background: #FFD241;
+}
+.red {
+  background: #FF4141;
+}
+.blue {
+  background: #658CFC;
+}
+.listItem .header .title {
+  margin-left: 24rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.listItem .header .subTitle {
+  font-size: 28rpx;
+  margin-left: auto;
+  margin-right: 16rpx;
+}
+.numView {
+  margin-right: 32rpx;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.numView .numIcon {
+  width: 48rpx;
+}
+.numView .inputView input {
+  font-size: 28rpx;
+  height: 100%;
+  text-align: center;
+  width: 64rpx;
+}
+.listItem .goodsView {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.goodsView .thumb {
+  flex-shrink: 0;
+  width: 96rpx;
+  height: 96rpx;
+  background: #eee;
+  margin: 24rpx 0;
+  margin-left: 32rpx;
+  margin-right: 16rpx;
+}
+.goodsView .detailView {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 0;
+}
+.detailView .title {
+  margin-right: 32rpx;
+  font-size: 32rpx;
+}
+.detailView .bottom {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12rpx;
+  justify-content: space-between;
+}
+.detailView .bottom .desc {
+  font-size: 28rpx;
+  color: #9C9C9C;
+  margin-right: 16rpx;
+}
+.submitBtn {
+  margin-top: 40rpx;
+  margin-bottom: 48rpx;
+  width: 606rpx;
+  height: 96rpx;
+  background: #57AF4A;
+  border-radius: 96rpx;
+  color: white;
+  font-size: 32rpx;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.listContentView {
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
+.listView {
+  width: 100%;
+  height: 100%;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="timeView" @tap='toChangeDay()'>
+      <view class="title">就餐时间</view>
+      <view class="value">{{currentDay}}</view>
+      <image class="icon" mode="widthFix" src="../../../images/icon_black_arrow_16.png" />
+    </view>
+    <view class="listContentView">
+      <scroll-view scroll-y class="listView">
+        <view class="listItem" wx:for="{{3}}" wx:key="self">
+          <view class="header">
+            <view class="lineView yellow" />
+            <view class="title">早餐</view>
+            <view class="subTitle">就餐人数</view>
+            <view class="numView">
+              <image class="numIcon" mode="widthFix" src="../../../images/icon_minus_24px.png" />
+              <view class="inputView">
+                <input value="1" type="number" />
+              </view>
+              <image class="numIcon" mode="widthFix" src="../../../images/icon_add_24px.png" />
+            </view>
+          </view>
+          <view class="goodsView" wx:for="{{5}}" wx:key="self">
+            <image class="thumb" src="" />
+            <view class="detailView">
+              <view class="title van-ellipsis">西红柿鸡蛋面</view>
+              <view class="bottom">
+                <view class="desc van-ellipsis">
+                  简介：西红柿、鸡蛋
+                </view>
+                <view class="numView">
+                  <image class="numIcon" mode="widthFix" src="../../../images/icon_minus_24px.png" />
+                  <view class="inputView">
+                    <input value="1" type="number" />
+                  </view>
+                  <image class="numIcon" mode="widthFix" src="../../../images/icon_add_24px.png" />
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="submitBtn" @tap="toGenerate()">
+      生成原材料
+    </view>
+    <van-popup show="{{ changeDayViewShow }}" position="bottom">
+      <van-datetime-picker
+        type="date"
+        value="{{ currentDate }}"
+        min-date="{{ minDate }}"
+        bind:confirm="onConfirm"
+        bind:cancel="onCancel"
+      />
+    </van-popup>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class SmartCreate extends wepy.page {
+    config = {
+      navigationBarTitleText: '新建',
+      usingComponents: {
+        'van-popup': '../../../components/van/popup',
+        'van-datetime-picker': '../../../components/van/datetime-picker/index'
+      }
+    }
+    components = {
+    }
+    data = {
+      changeDayViewShow: false,
+      currentDay: 0,
+      currentDate: new Date().getTime(),
+      minDate: new Date().getTime()
+    }
+    computed = {
+    }
+    methods = {
+      toChangeDay: function() {
+        this.changeDayViewShow = true
+      },
+      onConfirm: function(event) {
+        console.log(event)
+
+        var date = new Date(event.detail);
+
+        this.currentDay = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
+        this.currentDate = date
+        this.changeDayViewShow = false
+      },
+      onCancel: function() {
+        this.changeDayViewShow = false
+      },
+      toGenerate: function() {
+        this.$navigate({url:"smartGenerateRawMaterials"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+      var timestamp = Date.parse(new Date());
+      var date = new Date(timestamp)
+      this.currentDay = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
+    }
+  }
+</script>

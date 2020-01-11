@@ -1,0 +1,18 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.GetSwiperData = undefined;
+
+var _request = require('./request.js');
+
+// 获取轮播图数据
+var GetSwiperData = exports.GetSwiperData = function GetSwiperData() {
+  _request.RequestService.sendRequest().url(_request.RequestService.ServiceURL + '/mtp-wx/getHomeBannerData').header({
+    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+  }).method('GET').data({}).success(function (res) {
+    console.log(res);
+  }).send();
+}; // 引入request
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN1cHBsaWVyLmpzIl0sIm5hbWVzIjpbIkdldFN3aXBlckRhdGEiLCJSZXF1ZXN0U2VydmljZSIsInNlbmRSZXF1ZXN0IiwidXJsIiwiU2VydmljZVVSTCIsImhlYWRlciIsIm1ldGhvZCIsImRhdGEiLCJzdWNjZXNzIiwiY29uc29sZSIsImxvZyIsInJlcyIsInNlbmQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFDQTs7QUFFQTtBQUNPLElBQU1BLHdDQUFnQixTQUFoQkEsYUFBZ0IsR0FBWTtBQUN2Q0MsMEJBQWVDLFdBQWYsR0FBNkJDLEdBQTdCLENBQWlDRix3QkFBZUcsVUFBZixHQUEwQiwyQkFBM0QsRUFBd0ZDLE1BQXhGLENBQStGO0FBQzdGLG9CQUFnQjtBQUQ2RSxHQUEvRixFQUVHQyxNQUZILENBRVUsS0FGVixFQUVpQkMsSUFGakIsQ0FFc0IsRUFGdEIsRUFHR0MsT0FISCxDQUdXLGVBQU87QUFDaEJDLFlBQVFDLEdBQVIsQ0FBWUMsR0FBWjtBQUNELEdBTEQsRUFLR0MsSUFMSDtBQU1ELENBUE0sQyxDQUpQIiwiZmlsZSI6InN1cHBsaWVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8g5byV5YWlcmVxdWVzdFxuaW1wb3J0IHsgUmVxdWVzdFNlcnZpY2UgfSBmcm9tICcuL3JlcXVlc3QuanMnXG5cbi8vIOiOt+WPlui9ruaSreWbvuaVsOaNrlxuZXhwb3J0IGNvbnN0IEdldFN3aXBlckRhdGEgPSBmdW5jdGlvbiAoKSB7XG4gIFJlcXVlc3RTZXJ2aWNlLnNlbmRSZXF1ZXN0KCkudXJsKFJlcXVlc3RTZXJ2aWNlLlNlcnZpY2VVUkwrJy9tdHAtd3gvZ2V0SG9tZUJhbm5lckRhdGEnKS5oZWFkZXIoe1xuICAgICdjb250ZW50LXR5cGUnOiAnYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkOyBjaGFyc2V0PVVURi04J1xuICB9KS5tZXRob2QoJ0dFVCcpLmRhdGEoe1xuICB9KS5zdWNjZXNzKHJlcyA9PiB7XG4gICAgY29uc29sZS5sb2cocmVzKVxuICB9KS5zZW5kKClcbn1cblxuXG5cblxuXG4iXX0=

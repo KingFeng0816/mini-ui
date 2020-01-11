@@ -1,0 +1,68 @@
+
+  <view class="container _8eaef4a">
+    <view class="addressView _8eaef4a" bindtap="toChooseAddress" data-wpytochooseaddress-a="">
+      <view class="detailView _8eaef4a">
+        <view class="title _8eaef4a">
+          北京市朝阳区霄云路霄云里8号
+        </view>
+        <view class="desc _8eaef4a">
+          <view class="name _8eaef4a">王大陆</view>
+          <view class="phone _8eaef4a">13082347896</view>
+        </view>
+      </view>
+      <image class="icon _8eaef4a" mode="widthFix" src="../../../images/icon_black_arrow_16.png"/>
+    </view>
+    <view class="listView _8eaef4a">
+      <view class="supplierView _8eaef4a"  wx:for="{{3}}" wx:key="self">
+        <view class="header _8eaef4a">
+          <image class="icon _8eaef4a" mode="widthFix" src="../../../images/icon_activited_16.png"/>
+          <view class="title van-ellipsis _8eaef4a">文运街智慧生鲜市场文运街智慧生鲜市场文运街智慧生鲜市场</view>
+        </view>
+        <view class="timeView _8eaef4a" bindtap="toChangeDay" data-wpytochangeday-a="{{item}}">
+          <view class="title _8eaef4a">
+            送货时间
+          </view>
+          <view class="time _8eaef4a">
+            2019-12-16 10:00
+          </view>
+          <image class="icon _8eaef4a" mode="widthFix" src="../../../images/icon_gray_arrow_10.png"/>
+        </view>
+        <view class="goodsListView _8eaef4a">
+          <view class="content _8eaef4a">
+            <view class="goodsView _8eaef4a" wx:for="{{3}}" wx:key="self">
+              <image class="icon _8eaef4a" mode="widthFix" src="../../../images/icon_activited_16.png"/>
+              <view class="goodsThumb _8eaef4a">
+                <image class="thumb _8eaef4a" src=""/>
+                <image class="state _8eaef4a" mode="widthFix" src="../../../images/img_superscript_hg.png"/>
+              </view>
+              <view class="detail _8eaef4a">
+                <view class="title _8eaef4a">大白菜</view>
+                <view class="descView _8eaef4a">
+                  <view class="price _8eaef4a">1.99元/斤</view>
+                  <view class="num _8eaef4a">40斤</view>
+                </view>
+              </view>
+              <view class="priceView _8eaef4a">
+                ￥79.6
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="bottomView _8eaef4a">
+      <view class="allChooseBtn _8eaef4a">
+        <image class="icon _8eaef4a" mode="widthFix" src="../../../images/icon_activited_16.png"/>
+        <view class="title _8eaef4a">全选</view>
+      </view>
+      <view class="totalView _8eaef4a">
+        <view class="title _8eaef4a">合计：</view>
+        <view class="price _8eaef4a">￥276.8</view>
+      </view>
+      <view class="subMitBtn _8eaef4a" bindtap="toSubmit" data-wpytosubmit-a="">去结算</view>
+    </view>
+    <van-popup show="{{ changeDayViewShow }}" position="bottom" class="_8eaef4a">
+      <van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}"  bind:confirm="onConfirm" bind:cancel="onCancel" formatter="{{ formatter }}" class="_8eaef4a"/>
+    </van-popup>
+    <van-dialog id="van-dialog" confirm-button-text="是" cancel-button-text="否" confirm-button-color="#576B95" cancel-button-color="#353535" class="_8eaef4a"/>
+  </view>

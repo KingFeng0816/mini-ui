@@ -1,0 +1,34 @@
+<style scoped>
+</style>
+<template>
+  <view class="container">
+    <supplierMine wx:if="{{isSupplier}}" />
+    <purchaserMine wx:else />
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import PurchaserMine from "../../components/purchaserMine";
+  import SupplierMine from "../../components/supplierMine";
+
+  export default class Tab4 extends wepy.page {
+    config = {
+    }
+    components = {
+      purchaserMine: PurchaserMine,
+      supplierMine: SupplierMine
+    }
+    data = {
+      isSupplier: true
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

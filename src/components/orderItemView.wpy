@@ -1,0 +1,159 @@
+<style scoped>
+.listItem {
+  padding-top: 36rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.listItem .listItemHeader {
+  width: 100%;
+}
+.listItemHeader .title {
+  color: #9C9C9C;
+  font-size:28rpx;
+  font-weight:600;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  margin-bottom: 16rpx;
+}
+.listItem .listItemContent {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 15rpx;
+  border-radius: 16rpx;
+}
+.listItemContent .topView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  border-bottom: 2rpx solid #F1F1F1;
+  padding: 32rpx 0;
+  margin: 0 32rpx;
+  margin-bottom: 12rpx;
+}
+.topView .title {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-right: 16rpx;
+}
+.topView .state {
+  flex-shrink: 0;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.bottomView {
+  flex: 1;
+  padding: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bottomView .itemsView {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+.bottomView .totalView {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.totalView .leftView {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.leftView .price {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.leftView .num {
+  font-size: 24rpx;
+  color: #9C9C9C;
+}
+.totalView .icon {
+  margin-left: 16rpx;
+  width: 32rpx;
+}
+.itemsView .goodsView {
+  position: relative;
+  width: 96rpx;
+  height: 96rpx;
+  margin: 0 8rpx;
+}
+.goodsView .thumb {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+.goodsView .icon {
+  width: 52rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/*状态颜色*/
+.green {
+  color: #57AF4A;
+}
+.yellow {
+  color: #FD8E25;
+}
+
+</style>
+<template>
+  <view class="listItem">
+      <view class="listItemHeader">
+        <view class="title van-ellipsis">2019-12-16 18:26:47</view>
+      </view>
+      <view class="listItemContent">
+        <view class="topView">
+          <view class="title van-ellipsis">文运街智慧生鲜市场文运街智慧生鲜市场文运街智慧生鲜市场</view>
+          <view class="state green">待收货</view>
+        </view>
+        <view class="bottomView">
+          <view class="itemsView">
+            <view class="goodsView" wx:for="{{4}}" wx:key="self">
+              <image class="thumb" src="" />
+              <image class="icon" mode="widthFix" src="/images/img_superscript_hg.png" />
+            </view>
+          </view>
+          <view class="totalView">
+            <view class="leftView">
+              <view class="price">￥467.2</view>
+              <view class="num">共5件</view>
+            </view>
+            <image class="icon" mode="widthFix" src="/images/icon_black_arrow_16.png" />
+          </view>
+        </view>
+      </view>
+    </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class OrderItemView extends wepy.component {
+    config = {
+    }
+    components = {
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

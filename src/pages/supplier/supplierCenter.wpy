@@ -1,0 +1,31 @@
+<style scoped>
+</style>
+<template>
+  <view class="container">
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class SupplierCenter extends wepy.page {
+    config = {
+      navigationBarTitleText: '供应商管理'
+    }
+    components = {
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+      editAction: function() {
+        this.$navigate({url:"/pages/supplier/supplierEdit"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

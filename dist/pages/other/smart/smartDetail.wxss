@@ -1,0 +1,94 @@
+@import "./../../../components/orderItemView.wxss";
+
+.container._406a0e6 {
+  padding-bottom: 32rpx;
+}
+.topView._406a0e6 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding-bottom: 32rpx;
+}
+.topView .infoView._406a0e6 {
+  display: flex;
+  flex-direction: column;
+  padding: 14rpx 32rpx;
+}
+.topView .infoView .row._406a0e6 {
+  display: flex;
+  padding: 12rpx 0;
+  font-size: 32rpx;
+}
+.topView .blockView._406a0e6 {
+  margin: 12rpx 32rpx;
+  background: #F7F7F7;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16rpx;
+  padding-bottom: 32rpx;
+}
+.topView .blockView .header._406a0e6 {
+  display: flex;
+  flex-direction: row;
+  padding: 18rpx 16rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.topView .blockView .header .title._406a0e6 {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.topView .blockView .header .num._406a0e6 {
+  font-size: 28rpx;
+}
+.topView .blockView .content._406a0e6 {
+  display: flex;
+  flex-direction: row;
+}
+.topView .blockView .content .showAllBtn._406a0e6 {
+  display: flex;
+  padding: 0 16rpx;
+  margin-bottom: auto;
+}
+.topView .blockView .content .showAllBtn .btn._406a0e6 {
+  width: 94rpx;
+  height: 144rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #57AF4A;
+  background: white;
+}
+.topView .blockView .goodsView._406a0e6 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+.topView .blockView .goodsView .goodView._406a0e6 {
+  margin: 0 16rpx;
+  display: flex;
+  flex-direction: column;
+  width: 144rpx;
+}
+.topView .blockView .goodsView .goodView .thumb._406a0e6 {
+  width: 100%;
+  height: 144rpx;
+  background: #eee;
+  flex-shrink: 0;
+}
+.topView .blockView .goodsView .goodView .title._406a0e6 {
+  font-size: 24rpx;
+}
+.topView .blockView .goodsView .goodView .num._406a0e6 {
+  color: #9B9B9B;
+  font-size: 24rpx;
+}
+.orderListView._406a0e6 {
+  width: 100%;
+  display: flex;
+}

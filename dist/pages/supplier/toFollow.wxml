@@ -1,0 +1,17 @@
+
+  <view class="container _916c1f2">
+    <view class="header _916c1f2">
+      <view class="title _916c1f2">您尚未关注商品，为您推荐以下商品</view>
+      <image class="icon _916c1f2" mode="widthFix" src="/images/icon_gz_black_add_16.png" bindtap="toSearch" data-wpytosearch-a=""/>
+    </view>
+    <view class="listView _916c1f2">
+      <scroll-view class="listContentView _916c1f2" scroll-y>
+        <view class="tagsView _916c1f2">
+          <view class="tagItem tagItemSel _916c1f2"  wx:for="{{10}}" wx:key="self">白菜</view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="followBtn _916c1f2">
+      立刻关注
+    </view>
+  </view>

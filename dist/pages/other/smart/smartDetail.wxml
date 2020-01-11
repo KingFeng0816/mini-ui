@@ -1,0 +1,138 @@
+
+  <view class="container _406a0e6">
+    <view class="topView _406a0e6">
+      <view class="infoView _406a0e6">
+        <view class="row _406a0e6">
+          订单编号：20191216001
+        </view>
+        <view class="row _406a0e6">
+          创建时间：2019-12-16 09:26:38
+        </view>
+        <view class="row _406a0e6">
+          就餐日期：2019-12-16
+        </view>
+      </view>
+      <view class="blockView _406a0e6">
+        <view class="header _406a0e6">
+          <view class="title _406a0e6">早餐</view>
+          <view class="num _406a0e6">就餐人数：100人</view>
+        </view>
+        <view class="content _406a0e6">
+          <view class="goodsView _406a0e6">
+            <view class="goodView _406a0e6">
+              <image class="thumb _406a0e6"/>
+              <view class="title _406a0e6">西红柿炒鸡蛋</view>
+              <view class="num _406a0e6">x30</view>
+            </view>
+            <view class="goodView _406a0e6">
+              <image class="thumb _406a0e6"/>
+              <view class="title _406a0e6">西红柿炒鸡蛋</view>
+              <view class="num _406a0e6">x30</view>
+            </view>
+            <view class="goodView _406a0e6">
+              <image class="thumb _406a0e6"/>
+              <view class="title _406a0e6">西红柿炒鸡蛋</view>
+              <view class="num _406a0e6">x30</view>
+            </view>
+          </view>
+          <view class="showAllBtn _406a0e6">
+            <!-- <view class="btn">
+              <view>查看</view>
+              <view>全部</view>
+            </view> -->
+          </view>
+        </view>
+      </view>
+      <view class="blockView _406a0e6">
+        <view class="header _406a0e6">
+          <view class="title _406a0e6">午餐</view>
+          <view class="num _406a0e6">就餐人数：100人</view>
+        </view>
+        <view class="content _406a0e6">
+          <view class="goodsView _406a0e6">
+            <view class="goodView _406a0e6">
+              <image class="thumb _406a0e6"/>
+              <view class="title _406a0e6">西红柿炒鸡蛋</view>
+              <view class="num _406a0e6">x30</view>
+            </view>
+            <view class="goodView _406a0e6">
+              <image class="thumb _406a0e6"/>
+              <view class="title _406a0e6">西红柿炒鸡蛋</view>
+              <view class="num _406a0e6">x30</view>
+            </view>
+            <view class="goodView _406a0e6">
+              <image class="thumb _406a0e6"/>
+              <view class="title _406a0e6">西红柿炒鸡蛋</view>
+              <view class="num _406a0e6">x30</view>
+            </view>
+          </view>
+          <view class="showAllBtn _406a0e6">
+            <view class="btn _406a0e6" bindtap="toShowAll" data-wpytoshowall-a="">
+              <view class="_406a0e6">查看</view>
+              <view class="_406a0e6">全部</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="blockView _406a0e6">
+        <view class="header _406a0e6">
+          <view class="title _406a0e6">晚餐</view>
+          <view class="num _406a0e6">就餐人数：100人</view>
+        </view>
+        <view class="content _406a0e6">
+          <view class="goodsView _406a0e6">
+            <view class="goodView _406a0e6">
+              <image class="thumb _406a0e6"/>
+              <view class="title _406a0e6">西红柿炒鸡蛋</view>
+              <view class="num _406a0e6">x30</view>
+            </view>
+            <view class="goodView _406a0e6">
+              <image class="thumb _406a0e6"/>
+              <view class="title _406a0e6">西红柿炒鸡蛋</view>
+              <view class="num _406a0e6">x30</view>
+            </view>
+            <view class="goodView _406a0e6">
+              <image class="thumb _406a0e6"/>
+              <view class="title _406a0e6">西红柿炒鸡蛋</view>
+              <view class="num _406a0e6">x30</view>
+            </view>
+          </view>
+          <view class="showAllBtn _406a0e6">
+            <view class="btn _406a0e6">
+              <view class="_406a0e6">查看</view>
+              <view class="_406a0e6">全部</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="orderListView _406a0e6"  wx:for="{{3}}" wx:key="self" bindtap="toDetail" data-wpytodetail-a="">
+      
+  <view class="listItem _b7bcba4 _406a0e6">
+      <view class="listItemHeader _b7bcba4">
+        <view class="title van-ellipsis _b7bcba4">2019-12-16 18:26:47</view>
+      </view>
+      <view class="listItemContent _b7bcba4">
+        <view class="topView _b7bcba4">
+          <view class="title van-ellipsis _b7bcba4">文运街智慧生鲜市场文运街智慧生鲜市场文运街智慧生鲜市场</view>
+          <view class="state green _b7bcba4">待收货</view>
+        </view>
+        <view class="bottomView _b7bcba4">
+          <view class="itemsView _b7bcba4">
+            <view class="goodsView _b7bcba4"  wx:for="{{4}}" wx:key="self">
+              <image class="thumb _b7bcba4" src=""/>
+              <image class="icon _b7bcba4" mode="widthFix" src="/images/img_superscript_hg.png"/>
+            </view>
+          </view>
+          <view class="totalView _b7bcba4">
+            <view class="leftView _b7bcba4">
+              <view class="price _b7bcba4">￥467.2</view>
+              <view class="num _b7bcba4">共5件</view>
+            </view>
+            <image class="icon _b7bcba4" mode="widthFix" src="/images/icon_black_arrow_16.png"/>
+          </view>
+        </view>
+      </view>
+    </view>
+    </view>
+  </view>

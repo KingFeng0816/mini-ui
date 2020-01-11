@@ -1,0 +1,284 @@
+<style scoped>
+.container {
+  padding-bottom: 100rpx;
+}
+.introView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.introView .swiperContent {
+  width: 100%;
+  position: relative;
+}
+.swiperContent .swiperView {
+  width: 100%;
+  height: 420rpx;
+}
+.swiperView .swiperItem {
+  background: #eee;
+}
+.swiperContent .indexView {
+  background: rgba(0,0,0,0.4);
+  position: absolute;
+  bottom: 20rpx;
+  right: 32rpx;
+  padding: 4rpx 18rpx;
+  color: white;
+  font-size: 28rpx;
+  border-radius: 40rpx;
+}
+.descView {
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20rpx;
+  padding-bottom: 24rpx;
+}
+.descView .title {
+  margin: 0 32rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.descView .bottomView {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.descView .bottomView .priceView {
+  display: flex;
+  flex-direction: row;
+  margin-left: 32rpx;
+  margin-right: 16rpx;
+  align-items: baseline;
+  margin-top: 6rpx;
+}
+.priceView .symbol {
+  color: #FF3535;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+.priceView .price {
+  color: #FF3535;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+.priceView .unit {
+  color: #5E635A;
+  font-size: 24rpx;
+}
+.priceView .icon {
+  width: 32rpx;
+  padding: 4rpx 16rpx;
+  margin-top: auto;
+}
+.numView {
+  margin-right: 32rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.numView .icon {
+  width: 48rpx;
+}
+.inputView input {
+  font-size: 28rpx;
+  height: 100%;
+  width: 64rpx;
+  text-align: center;
+}
+.tabView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16rpx;
+}
+.tabView .tabHeader {
+  position: relative;
+  background: white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 32rpx 0;
+}
+.tabItem {
+  font-size: 32rpx;
+  margin: 0 32rpx;
+  color: #5E635A;
+}
+.tabItemSel {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin: 0 32rpx;
+}
+.tabHeader .lineView {
+  position: absolute;
+  left: 32rpx;
+  bottom: 22rpx;
+  width: 48rpx;
+  height: 6rpx;
+  border-radius: 3rpx;
+  background: #57AF4A;
+}
+.contentImage {
+  width: 100%;
+}
+.navView {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  background: white;
+  display: flex;
+  flex-direction: row;
+}
+.buttonsView {
+  flex: 1;
+  padding: 0 26rpx;
+  height: 100%;
+}
+.addToCartBtn, .buyBtn {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 224rpx;
+  height: 100%;
+  color: white;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.addToCartBtn {
+  background: #FD8E25;
+}
+.buyBtn {
+  background: #FF3535;
+}
+.buttonsView {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.buttonsView .btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.buttonsView .btn .icon {
+  width: 38rpx;
+}
+.buttonsView .btn .title {
+  font-size: 24rpx;
+  margin-top: 6rpx;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="introView">
+      <view class="swiperContent">
+        <swiper class="swiperView">
+          <swiper-item class="swiperItem"></swiper-item>
+        </swiper>
+        <view class="indexView">
+          1/5
+        </view>
+      </view>
+      <view class="descView">
+        <view class="title">
+          平遥大白菜
+        </view>
+        <view class="bottomView">
+          <view class="priceView">
+            <view class="symbol">¥</view>
+            <view class="price">1.99</view>
+            <view class="unit">元/斤</view>
+            <image class="icon" mode="widthFix" src="/images/icon_spxq_edit_black_16.png" @tap="toEdit()" />
+          </view>
+          <view class="numView">
+            <image class="icon" mode="widthFix" src="/images/icon_minus_24px.png" />
+            <view class="inputView">
+              <input value="1" type="number" />
+            </view>
+            <image class="icon" mode="widthFix" src="/images/icon_add_24px.png" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="tabView">
+      <view class="tabHeader">
+        <view id="tab0" class="{{selectTab == 0 ? 'tabItemSel':'tabItem'}}" @tap="setSelectTab(0)" >商品简介</view>
+        <view id="tab1" class="{{selectTab == 1 ? 'tabItemSel':'tabItem'}}" @tap="setSelectTab(1)">检测报告</view>
+        <view class="lineView" animation="{{lineAnimation}}" />
+      </view>
+      <view class="tabContent">
+        <image class"contentImage" mode="widthFix" src="http://wx1.sinaimg.cn/orj360/006Akcb5ly1g7s0e3p6lqj30ia3h0ki2.jpg" />
+      </view>
+    </view>
+    <view class="navView">
+      <view class="buttonsView">
+        <view class="btn">
+          <image class="icon" mode="widthFix" src="../../images/icon_gys_20px.png" />
+          <view class="title">供应商</view>
+        </view>
+        <view class="btn">
+          <image class="icon" mode="widthFix" src="../../images/icon_gwc_20px.png" />
+          <view class="title">购物车</view>
+        </view>
+      </view>
+      <view class="addToCartBtn">加入购物车</view>
+      <view class="buyBtn">立即购买</view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class GoodsDetail extends wepy.page {
+    config = {
+    }
+    components = {
+    }
+    data = {
+      selectTab: 0,
+      lineAnimation: {}
+    }
+    computed = {
+    }
+    methods = {
+      /*Tab切换*/
+      setSelectTab: function(index) {
+          let that = this
+          let id = '#tab' + index
+          const query = wx.createSelectorQuery()
+          query.select(id).boundingClientRect()
+          query.exec(function(res){
+
+            that.animation.translate(res[0].left - 16, 0).step()
+            that.lineAnimation = that.animation.export()
+            that.selectTab = index
+            that.$apply()
+            
+          })
+      },
+      toEdit: function() {
+        this.$navigate({url:"/pages/supplier/goodsEdit"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+      var animation = wx.createAnimation({
+        duration: 300,
+        timingFunction: 'ease',
+      })
+
+      this.animation = animation
+    }
+  }
+</script>

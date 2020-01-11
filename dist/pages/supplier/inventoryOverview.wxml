@@ -1,0 +1,84 @@
+
+  <view class="container _8d91f3e">
+    <view class="topView _8d91f3e">
+      <view class="header _8d91f3e">
+        当前库存
+      </view>
+      <view class="content _8d91f3e">
+        <view class="topViewItem _8d91f3e">
+          <view class="num _8d91f3e">0</view>
+          <view class="title _8d91f3e">品种</view>
+        </view>
+        <view class="topViewItem _8d91f3e">
+          <view class="num _8d91f3e">0</view>
+          <view class="title _8d91f3e">成本</view>
+        </view>
+        <view class="topViewItem _8d91f3e">
+          <view class="num _8d91f3e">0</view>
+          <view class="title _8d91f3e">预警商品数</view>
+        </view>
+      </view>
+    </view>
+    <view class="contentView _8d91f3e">
+      <view class="header _8d91f3e">
+        <view class="title _8d91f3e">库存详情</view>
+        <view class="warningBtn _8d91f3e">
+          <image class="icon _8d91f3e" mode="widthFix" src="/images/icon_activited_16.png"/>
+          <view class="name _8d91f3e">库存预警</view>
+        </view>
+      </view>
+      <view class="titleRow _8d91f3e">
+        <view class="titleBlock _8d91f3e">
+          <view class="title _8d91f3e">
+            商品名称
+          </view>
+        </view>
+        <view class="titleBlock _8d91f3e">
+          <view class="title _8d91f3e">
+            库存量
+          </view>
+          <image class="icon _8d91f3e" mode="widthFix" src="/images/icon_arrow_down_gray_8.png"/>
+        </view>
+        <view class="titleBlock _8d91f3e">
+          <view class="title _8d91f3e">
+            库存单价
+          </view>
+          <image class="icon _8d91f3e" mode="widthFix" src="/images/icon_arrow_down_gray_8.png"/>
+        </view>
+        <view class="titleBlock _8d91f3e">
+          <view class="title _8d91f3e">
+            成本
+          </view>
+          <image class="icon _8d91f3e" mode="widthFix" src="/images/icon_arrow_down_gray_8.png"/>
+        </view>
+      </view>
+      <view class="formView _8d91f3e">
+        <scroll-view class="content _8d91f3e" scroll-y>
+          <view class="dataContent _8d91f3e">
+            <view class="dataRow _8d91f3e"  wx:for="{{20}}" wx:key="self">
+              <view class="dataBlock _8d91f3e">
+                <view class="title _8d91f3e">
+                  小白菜
+                </view>
+              </view>
+              <view class="dataBlock _8d91f3e">
+                <view class="title _8d91f3e">
+                  180
+                </view>
+              </view>
+              <view class="dataBlock _8d91f3e">
+                <view class="title _8d91f3e">
+                  5元/公斤
+                </view>
+              </view>
+              <view class="dataBlock _8d91f3e">
+                <view class="title _8d91f3e">
+                  3元/公斤
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>

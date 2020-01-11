@@ -1,0 +1,132 @@
+<style scoped>
+.emptyView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.emptyView .text {
+  color: #9C9C9C;
+  font-size: 32rpx;
+}
+.emptyView .icon {
+  width: 100%;
+}
+.normalView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.orderListItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding-bottom: 26rpx;
+  margin-bottom: 16rpx;
+}
+.orderListItem .itemHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.itemHeader .title {
+  margin: 32rpx;
+  margin-bottom: 22rpx;
+  margin-right: 16rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.itemHeader .subTitle {
+  margin-right: 32rpx;
+  font-size: 28rpx;
+  color: #5E635A;
+}
+.goodsListItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 10rpx 0;
+}
+.goodsListItem .thumb {
+  flex-shrink: 0;
+  width: 96rpx;
+  height: 96rpx;
+  margin-left: 32rpx;
+  border-radius:4rpx;
+  border:1rpx solid #EAEAEA;
+}
+.goodsListItem .title {
+  flex: 1;
+  font-size: 32rpx;
+  margin: 0 16rpx;
+}
+.goodsListItem .num {
+  flex-shrink: 0;
+  color: #9C9C9C;
+  font-size: 32rpx;
+  margin-right: 32rpx;
+}
+.addBtn {
+  width: 112rpx;
+  position: fixed;
+  bottom: 64rpx;
+  right: 46rpx;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="emptyView" wx:if="{{false}}">
+      <image class="icon" mode="widthFix" src="../images/img_dd_empty.png" />
+      <view class="text">暂无智慧订货~</view>
+    </view>
+    <view class="normalView" wx:else>
+      <view class="orderListItem" wx:for="{{10}}" wx:key="self" @tap="toDetail()">
+        <view class="itemHeader">
+          <view class="title">
+            就餐时间
+          </view>
+          <view class="subTitle van-ellipsis">
+            2019-12-15 07:30:28
+          </view>
+        </view>
+        <view class="goodsListItem" wx:for="{{5}}" wx:key="self">
+          <image class="thumb" src="" />
+          <view class="title van-ellipsis">这里是标题这里是标题这里是标题这里是标题</view>
+          <view class="num">x10</view>
+        </view>
+      </view>
+      <image class="addBtn" mode="widthFix" src="../images/btn_zhdh_new.png" @tap="toCreate()" />
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class SmartOrder extends wepy.page {
+    config = {
+      navigationBarTitleText: '智慧订货'
+    }
+    components = {
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+      toCreate: function() {
+        this.$parent.$navigate({url:"/pages/other/smart/smartCreate"})
+      },
+      toDetail: function() {
+        this.$parent.$navigate({url:"/pages/other/smart/smartDetail"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

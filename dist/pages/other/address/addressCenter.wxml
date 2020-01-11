@@ -1,0 +1,22 @@
+
+  <view class="container _01dc532">
+    <view class="rowItem _01dc532"  wx:for="{{10}}" wx:key="self">
+      <view class="rowContent _01dc532">
+        <view class="selBtn _01dc532">
+          <image class="icon _01dc532" mode="widthFix" src="/images/icon_activited_16.png"/>
+        </view>
+        <view class="detailView _01dc532">
+          <view class="title _01dc532">北京市朝阳区霄云路霄云里8号</view>
+          <view class="subView _01dc532">
+            <view class="name _01dc532">王大陆</view>
+            <view class="phone _01dc532">13082347896</view>
+            <view class="defaultView _01dc532">默认</view>
+          </view>
+        </view>
+        <view class="editBtn _01dc532">
+          <image class="icon _01dc532" mode="widthFix" src="/images/icon_edit_20.png"/>
+        </view>
+      </view>
+    </view>
+    <view class="addBtn _01dc532">新增地址</view>
+  </view>

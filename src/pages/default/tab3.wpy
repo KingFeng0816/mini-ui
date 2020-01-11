@@ -1,0 +1,34 @@
+<style scoped>
+</style>
+<template>
+  <view class="container">
+    <supplierGoodsCenter wx:if="{{isSupplier}}" />
+    <cart wx:else />
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import Cart from "../../components/cart";
+  import SupplierGoodsCenter from "../../components/supplierGoodsCenter";
+
+  export default class Tab3 extends wepy.page {
+    config = {
+    }
+    components = {
+      cart: Cart,
+      supplierGoodsCenter: SupplierGoodsCenter
+    }
+    data = {
+      isSupplier: true
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

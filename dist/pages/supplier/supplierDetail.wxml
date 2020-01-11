@@ -1,0 +1,145 @@
+
+  <view class="container _473a2f8">
+    <view class="topView _473a2f8">
+      <view class="bgView _473a2f8">
+        <image class="logo _473a2f8" src=""/>
+        <view class="title _473a2f8">文运街智慧生鲜市场</view>
+      </view>
+      <view class="coverView _473a2f8">
+        <view class="coverContentView _473a2f8">
+          <view class="coverMainView _473a2f8">
+            <view class="itemView _473a2f8" bindtap="enquiryQualification" data-wpyenquiryqualification-a="">
+              <image class="icon _473a2f8" mode="widthFix" src="../../images/icon_zzcx_32.png"/>
+              <view class="title _473a2f8">
+                资质查询
+              </view>
+            </view>
+            <view class="itemView _473a2f8" bindtap="incomingInquiry" data-wpyincominginquiry-a="">
+              <image class="icon _473a2f8" mode="widthFix" src="../../images/icon_lhcx_32.png"/>
+              <view class="title _473a2f8">
+                来货查询
+              </view>
+            </view>
+            <view class="itemView _473a2f8" bindtap="testReport" data-wpytestreport-a="">
+              <image class="icon _473a2f8" mode="widthFix" src="../../images/icon_jcxx_32.png"/>
+              <view class="title _473a2f8">
+                检测信息
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="photoView _473a2f8">
+      <view class="headerView _473a2f8">
+        <view class="title _473a2f8">供应商照片</view>
+      </view>
+      <scroll-view scroll-x class="scrollView _473a2f8">
+        <view class="contentView _473a2f8">
+          <view class="photoItemView _473a2f8"  wx:for="{{10}}" wx:key="self">
+            <image class="photo _473a2f8" src=""/>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="superviseView _473a2f8">
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          监督部门：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          大东桥局市场监督管理所
+        </view>
+      </view>
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          地址：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          湖南省衡阳石鼓区南起司前街168号
+        </view>
+      </view>
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          所长：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          邹捷
+        </view>
+      </view>
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          监督人员：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          徐殿臣
+        </view>
+      </view>
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          办公电话：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          010-8973215
+        </view>
+      </view>
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          举报电话：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          010-8973215
+        </view>
+      </view>
+    </view>
+    <view class="superviseView _473a2f8">
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          主办方：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          津桥农贸市场
+        </view>
+      </view>
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          法人代表：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          秦守发
+        </view>
+      </view>
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          负责人：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          龚晓东
+        </view>
+      </view>
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          安全负责人：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          张慧君
+        </view>
+      </view>
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          公开电话：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          010-8973215
+        </view>
+      </view>
+      <view class="infoRowView _473a2f8">
+        <view class="title _473a2f8">
+          举报电话：
+        </view>
+        <view class="value van-ellipsis _473a2f8">
+          010-8973215
+        </view>
+      </view>
+    </view>
+  </view>

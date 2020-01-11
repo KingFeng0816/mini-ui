@@ -1,0 +1,16 @@
+
+  <view class="container _b6d1190">
+    <view class="blockView _b6d1190">
+      <view class="header _b6d1190">
+        <view class="title _b6d1190">晚餐</view>
+        <view class="num _b6d1190">就餐人数：100人</view>
+      </view>
+      <view class="content _b6d1190">
+        <view class="goodView _b6d1190"  wx:for="{{5}}" wx:key="self">
+          <image class="thumb _b6d1190"/>
+          <view class="title van-ellipsis _b6d1190">西红柿炒鸡蛋</view>
+          <view class="num _b6d1190">x30</view>
+        </view>
+      </view>
+    </view>
+  </view>

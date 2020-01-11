@@ -1,0 +1,86 @@
+
+.container._01dc532 {
+  padding-bottom: 100rpx;
+}
+.addBtn._01dc532 {
+  position: fixed;
+  font-size: 34;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: #57AF4A;
+}
+.rowItem._01dc532 {
+  width: 686rpx;
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: row;
+  background: white;
+}
+.rowContent._01dc532 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #DEDEDE;
+}
+.selBtn._01dc532 {
+  flex-shrink: 0;
+  padding-right: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selBtn .icon._01dc532 {
+  width: 32rpx;
+}
+.detailView._01dc532 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx 0;
+}
+.detailView .title._01dc532 {
+  margin-top: 4rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.subView._01dc532 {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #7C7C7C;
+  font-size: 28rpx;
+}
+.subView .phone._01dc532 {
+  margin-left: 28rpx;
+}
+.subView .defaultView._01dc532 {
+  margin-left: 30rpx;
+  width: 72rpx;
+  height: 36rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #57AF4A;
+  font-size: 24rpx;
+  font-weight: 600;
+  border-radius:8rpx;
+  border:2rpx solid rgba(87,175,74,1);
+}
+.editBtn._01dc532 {
+  flex-shrink: 0;
+  padding-left: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.editBtn .icon._01dc532 {
+  width: 40rpx;
+}

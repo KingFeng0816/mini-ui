@@ -1,0 +1,56 @@
+<style scoped>
+</style>
+<template>
+  <view class="container">
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  var scrollLeft = 0
+  export default class SupplierGoodsCenter extends wepy.page {
+    config = {
+      navigationBarTitleText: '商品管理'
+    }
+    components = {
+    }
+    data = {
+      selectTab: 0,
+      lineAnimation: {}
+    }
+    computed = {
+    }
+    methods = {
+      /*Tab切换*/
+      setSelectTab: function(index) {
+          let that = this
+          let id = '#tab' + index
+          const query = wx.createSelectorQuery()
+          query.select(id).boundingClientRect()
+          query.exec(function(res){
+
+            that.animation.translate(res[0].left - 8 + scrollLeft, 0).step()
+            that.lineAnimation = that.animation.export()
+            that.selectTab = index
+            that.$apply()
+            
+          })
+      },
+      onScroll: function(event) {
+        scrollLeft = event.detail.scrollLeft
+      }
+    }
+    events = {
+    }
+    onLoad() {
+      var animation = wx.createAnimation({
+        duration: 300,
+        timingFunction: 'ease',
+      })
+
+      this.animation = animation
+      scrollLeft = 0;
+    }
+  }
+</script>

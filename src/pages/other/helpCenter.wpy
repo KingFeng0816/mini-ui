@@ -1,0 +1,85 @@
+<style scoped>
+.container {
+  min-height: 100%;
+  background: white;
+  padding: 30rpx 0;
+}
+.rowView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  margin-bottom: 48rpx;
+}
+.rowView .header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.rowView .header .icon {
+  margin-left: 32rpx;
+  margin-right: 16rpx;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 16rpx;
+  border:4rpx solid #57AF4A;
+  flex-shrink: 0;
+}
+.rowView .header .title {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #57AF4A;
+  margin-right: 32rpx;
+}
+.rowView .content {
+  margin-left: 68rpx;
+  margin-right: 32rpx;
+  margin-top: 14rpx;
+  font-size: 32rpx;
+}
+</style>
+<template>
+  <view class="container">
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class HelpCenter extends wepy.page {
+    config = {
+    }
+    components = {
+    }
+    data = {
+      qa: [
+        {
+          "q": "如何登陆智慧安鲜系统？",
+          "a": "请您使用微信公众号搜索功能，输入“智慧安鲜”，关注本公众号之后，您可通过点击下方「首页」进入智慧安鲜系统。"
+        },
+        {
+          "q": "如何在系统内下单？",
+          "a": "请您使用微信公众号搜索功能，输入“智慧安鲜”，关注本公众号之后，您可通过点击下方「首页」进入智慧安鲜系统。请您使用微信公众号搜索功能，输入“智慧安鲜”，关注本公众号之后，您可通过点击下方「首页」进入智慧安鲜系统。"
+        },
+        {
+          "q": "如何联系客服？",
+          "a": "您可拨打客服热线400-010-9988\n工作时间：周一至周五9:00-18:00"
+        },
+        {
+          "q": "如何联系采购方？",
+          "a": "请您使用微信公众号搜索功能，输入“智慧安鲜”，关注本公众号之后，您可通过点击下方「首页」进入智慧安鲜系统。请您使用微信公众号搜索功能，输入“智慧安鲜”，关注本公众号之后，您可通过点击下方「首页」进入智慧安鲜系统。"
+        }
+      ]
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

@@ -1,0 +1,83 @@
+
+  <view class="container _5ea267f">
+    <view class="rowView _5ea267f">
+      <view class="contentView _5ea267f">
+        <view class="title _5ea267f">
+          姓名：
+        </view>
+        <view class="input _5ea267f">
+          <input placeholder="请填写收货人的姓名" class="_5ea267f"/>
+        </view>
+      </view>
+    </view>
+    <view class="rowView _5ea267f">
+      <view class="contentView _5ea267f">
+        <view class="title _5ea267f">
+          电话：
+        </view>
+        <view class="input _5ea267f">
+          <input placeholder="请填写收货人的手机号码" class="_5ea267f"/>
+        </view>
+      </view>
+    </view>
+    <view class="rowView _5ea267f">
+      <view class="contentView _5ea267f">
+        <view class="title _5ea267f">
+          地区：
+        </view>
+        <view class="input _5ea267f" bindtap="chooseAreaAction" data-wpychooseareaaction-a="">
+          <input placeholder="请选择省 / 市 / 区" disabled value="{{location}}" class="_5ea267f"/>
+        </view>
+      </view>
+    </view>
+    <view class="rowView _5ea267f">
+      <view class="contentView _5ea267f">
+        <view class="title _5ea267f">
+          详细地址：
+        </view>
+        <view class="input _5ea267f">
+          <input placeholder="请填写街道门牌、楼层房间号等信息" class="_5ea267f"/>
+        </view>
+      </view>
+    </view>
+    <view class="rowView _5ea267f">
+      <view class="contentView _5ea267f">
+        <view class="title _5ea267f">
+          设为默认地址
+        </view>
+        <view class="rightView _5ea267f">
+          <van-switch checked="{{checked}}" size="48rpx"  bind:change="onChange" active-color="#57AF4A" class="_5ea267f"/>
+        </view>
+      </view>
+    </view>
+    <view class="saveBtn _5ea267f">保存地址</view>
+    <view class="delBtn _5ea267f">删除地址</view>
+    <van-popup show="{{ chooseAreaViewShow }}" position="bottom" class="_5ea267f">
+      <view class="chooseAreaView _5ea267f">
+        <view class="header _5ea267f">
+          <view class="closeIcon _5ea267f" bindtap="closeChooseAreaAction" data-wpyclosechooseareaaction-a="">
+            <image class="icon _5ea267f" mode="widthFix" src="../../images/icon_actionsheet_closed_12.png"/>
+          </view>
+          <view class="title _5ea267f">联系地址</view>
+          <view class="confirmBtn _5ea267f">确定</view>
+        </view>
+        <view class="content _5ea267f">
+          <view class="valueView _5ea267f">
+            <view class="valueContentView _5ea267f">
+              <view class="valueItemSel _5ea267f">辽宁省</view>
+              <view class="valueItem _5ea267f">沈阳市</view>
+              <view class="valueItem _5ea267f">皇姑区</view>
+              <view class="lineView _5ea267f"/>
+            </view>
+          </view>
+          <scroll-view scroll-y class="listView _5ea267f">
+            <view class="listItem _5ea267f"  wx:for="{{10}}" wx:key="self">
+              <view class="listItemContent _5ea267f">
+                新城区
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-popup>
+  </view>

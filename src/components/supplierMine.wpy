@@ -1,0 +1,237 @@
+<style scoped>
+.topView {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.topView .bgView {
+  width: 100%;
+  display: flex;
+  background: #57AF4A;
+  margin-bottom: 144rpx;
+}
+.topView .infoView {
+  margin-top: 64rpx;
+  margin-bottom: 192rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.infoView .headerImv {
+  flex-shrink: 0;
+  width: 96rpx;
+  height: 96rpx;
+  margin-left: 48rpx;
+  margin-right: 32rpx;
+  border-radius: 96rpx;
+  background: #eee;
+}
+.infoView .detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 48rpx;
+}
+.infoView .nikeName {
+  color: white;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.infoView .company {
+  color: white;
+  font-size: 28rpx;
+}
+.orderView {
+  border-radius: 20rpx;
+  background: white;
+  position: absolute;
+  bottom: 0;
+  left: 32rpx;
+  right: 32rpx;
+  height: 256rpx;
+  display: flex;
+  flex-direction: column;
+}
+.orderView .title {
+  font-size: 32rpx;
+  font-weight: 600;
+  padding: 18rpx 32rpx;
+}
+.orderView .content {
+  flex: 1;
+  padding: 0 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.orderView .orderItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40rpx;
+  position: relative;
+  margin-bottom: 40rpx;
+}
+.orderItem .itemTitle {
+  font-size: 28rpx;
+}
+.orderItem .price {
+  font-size: 48rpx;
+  font-weight: bold;
+}
+.userCenter {
+  border-radius: 20rpx;
+  background: white;
+  margin: 32rpx auto;
+  width: 686rpx;
+  height: 440rpx;
+  display: flex;
+  flex-direction: column;
+}
+.userCenter .title{
+  font-size: 32rpx;
+  font-weight: 600;
+  padding: 18rpx 32rpx;
+}
+.userCenter .content {
+  flex: 1;
+  padding: 0 24rpx;
+  margin-bottom: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.userCenter .content .userItem {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 40rpx;
+}
+.userItem .icon {
+  width: 64rpx;
+}
+.userItem .itemTitle {
+  margin: 8rpx 0;
+  font-size: 28rpx;
+}
+.userItem .red {
+  width: 16rpx;
+  height: 16rpx;
+  position: absolute;
+  background: #FF3535;
+  border-radius: 16rpx;
+  top: 40rpx;
+  right: 36rpx;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="topView">
+      <view class="bgView">
+        <view class="infoView">
+          <image class="headerImv" src="" />
+          <view class="detail">
+            <view class="nikeName van-ellipsis">云天河</view>
+            <view class="company van-ellipsis">辽宁省东北育才学校浑南部</view>
+          </view>
+        </view>
+      </view>
+      <view class="orderView">
+        <view class="title">今日配送订单情况</view>
+        <view class="content">
+          <view class="orderItem" @tap="toOrderList(0)">
+            <view class="price">0.00</view>
+            <view class="itemTitle">待确认</view>
+          </view>
+          <view class="orderItem">
+            <view class="price">0.00</view>
+            <view class="itemTitle">待确认</view>
+          </view>
+          <view class="orderItem">
+            <view class="price">0.00</view>
+            <view class="itemTitle">待确认</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="userCenter">
+      <view class="title">配置管理</view>
+      <view class="content">
+        <view class="userItem" @tap="toSupplierCenter()">
+          <image class="icon" mode="widthFix" src="/images/icon_me_gys_32.png" />
+          <view class="itemTitle">供应商管理</view>
+        </view>
+        <view class="userItem">
+          <image class="icon" mode="widthFix" src="/images/icon_me_kjgl_32.png" />
+          <view class="itemTitle">客户管理</view>
+        </view>
+        <view class="userItem" @tap="toNeedPay()">
+          <image class="icon" mode="widthFix" src="/images/icon_me_fktj_32.png" />
+          <view class="itemTitle">应收账款</view>
+        </view>
+        <view class="userItem" @tap="toInventoryOverview()">
+          <image class="icon" mode="widthFix" src="/images/icon_me_bzzx_32.png" />
+          <view class="itemTitle">库存概况</view>
+        </view>
+        <view class="userItem" @tap="toSalesStatistics()">
+          <image class="icon" mode="widthFix" src="/images/icon_me_sstj_32.png" />
+          <view class="itemTitle">销售统计</view>
+        </view>
+        <view class="userItem" @tap="toDataAnalysis()">
+          <image class="icon" mode="widthFix" src="/images/icon_me_sjfx_32.png" />
+          <view class="itemTitle">数据分析</view>
+        </view>
+        <view class="userItem" @tap="toPriceMaintain()">
+          <image class="icon" mode="widthFix" src="/images/icon_me_jgwh_32.png" />
+          <view class="itemTitle">价格维护</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class SupplierMine extends wepy.page {
+    config = {
+      navigationBarTitleText: '我的'
+    }
+    components = {
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+      toSupplierCenter: function() {
+        this.$parent.$navigate({url:"/pages/supplier/supplierCenter"})
+      },
+      toSalesStatistics: function() {
+        this.$parent.$navigate({url:"/pages/supplier/salesStatistics"})
+      },
+      toInventoryOverview: function() {
+        this.$parent.$navigate({url:"/pages/supplier/inventoryOverview"})
+      },
+      toDataAnalysis: function() {
+        this.$parent.$navigate({url:"/pages/supplier/dataAnalysis"})
+      },
+      toPriceMaintain: function() {
+        this.$parent.$navigate({url:"/pages/supplier/priceMaintain"})
+      },
+      toNeedPay: function() {
+        this.$parent.$navigate({url:"/pages/other/needPay"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

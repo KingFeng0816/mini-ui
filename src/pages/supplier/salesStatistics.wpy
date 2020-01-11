@@ -1,0 +1,30 @@
+<style scoped>
+</style>
+<template>
+  <view class="container">
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import OrderItemView from "../../components/orderItemView";
+
+  export default class SalesStatistics extends wepy.page {
+    config = {
+      navigationBarTitleText: '销售统计'
+    }
+    components = {
+      orderItemView: OrderItemView
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

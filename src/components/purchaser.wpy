@@ -1,0 +1,134 @@
+<style scoped>
+.container {
+  background: white;
+  padding-bottom: 16rpx;
+}
+.topView {
+  margin-bottom: 22rpx;
+}
+.swiperContent {
+  margin: 32rpx 0;
+  width: 686rpx;
+  height: 386rpx;
+  background: white;
+}
+.swiperView {
+  width: 100%;
+  height: 100%;
+}
+.swiperItem {
+  border-radius: 16rpx;
+  background: #eee;
+}
+
+.listView {
+  width: 100%;
+}
+.listHeader .title {
+  margin: 8rpx 32rpx;
+  color: black;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+</style>
+<template>
+  <view class="container">
+    <view class="topView">
+      <view class="swiperContent">
+        <swiper class="swiperView" indicator-dots="{{indicatorDots}}"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{bannerList}}" wx:key="*this">
+            <swiper-item class="swiperItem" catchtap="onItemClick" data-title="{{item.title}}">
+              <view class="swiperItem {{item}}">
+                <image style="width: 100%;"  mode="scaleToFill" src="{{item.path}}"></image>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+    <view class="listView">
+      <view class="listHeader">
+        <view class="title">
+          供应商
+        </view>
+      </view>
+      <view class="listContent">
+        <view   @tap="selectSupplier()">
+          <repeat wx:for="{{storeListData}}">
+            <supplierRowView :canshu1.sync="storeListData[index]"  bind:supplierRowViewTap="supplierRowViewTap" />
+          </repeat>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import SupplierRowView from "./supplierRowView";
+  import {GetSwiperData} from "../store/actions/purchaser.js";
+  import {GetStoreListData} from "../store/actions/purchaser.js";
+  import { RequestService } from '../store/actions/request.js'
+  export default class Purchaser extends wepy.page {
+    config = {
+    }
+    components = {
+      supplierRowView: SupplierRowView
+    }
+    data = {
+      storeListData:[],
+      bannerList:[],
+      indicatorDots: true,
+      vertical: false,
+      autoplay: true,
+      interval: 2000,
+      duration: 500,
+    }
+    computed = {
+    }
+    methods = {
+      selectSupplier: function(item) {
+        console.log('selectSupplier: ', item.canshu1)
+        this.$parent.$navigate({url:"/pages/purchaser/chooseGoodsFromSupplier?storeId="})
+      },
+      testAction: function() {
+        this.$parent.$navigate({url:"/pages/other/order/tracingSource"})
+      },
+      onItemClick: function(event){
+        var that = this;
+        console.log(event.currentTarget.dataset.title);
+      },
+      supplierRowViewTap(e) {
+        console.log(e)
+      }
+    };
+    events = {
+    };
+    onLoad()
+    {
+      var that = this;
+
+      //加载banner数据
+      GetSwiperData(function(myData) {
+        console.log(myData.data.data);
+        that.bannerList =myData.data.data;
+        that.$apply();
+
+      });
+      //加载店铺列表数据
+      GetStoreListData(function(myData) {
+        console.log(myData.data.data);
+        that.storeListData =myData.data.data;
+        that.$apply();
+
+      });
+
+
+
+    };
+
+
+  }
+</script>

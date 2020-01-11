@@ -1,0 +1,43 @@
+<style scoped>
+.container {
+  padding-bottom: 16rpx;
+}
+.itemView {
+  width: 100%;
+  display: flex;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="itemView" wx:for="{{10}}" wx:key="self" @tap="toDetail()" >
+      <orderItemView />
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import OrderItemView from "./orderItemView";
+
+  export default class OrderList extends wepy.page {
+    config = {
+      navigationBarTitleText: '订单列表'
+    }
+    components = {
+      orderItemView: OrderItemView
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+      toDetail: function() {
+        this.$parent.$navigate({url:"/pages/other/order/orderDetail"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

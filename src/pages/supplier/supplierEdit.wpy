@@ -1,0 +1,372 @@
+<style scoped>
+.container, page {
+  height: 100%;
+}
+.listView {
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
+.listContentView {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.saveBtn {
+  font-size: 32rpx;
+  color: white;
+  font-weight: 500;
+  background: #57AF4A;
+  height: 96rpx;
+  width: 606rpx;
+  border-radius: 96rpx;
+  margin-top: 16rpx;
+  margin-bottom: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.typeView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.typeView .title {
+  font-size: 32rpx;
+  font-weight: 600;
+  padding: 32rpx;
+  padding-bottom: 24rpx;
+}
+.tagsView {
+  flex: 1;
+  padding: 0 24rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.tagsView .tagItem {
+  margin: 8rpx;
+  font-size: 32rpx;
+  padding: 10rpx 32rpx;
+  color: #4A4A4A;
+  border-radius: 34rpx;
+  border:1rpx solid rgba(190,190,190,1);
+}
+.tagsView .tagItemSel {
+  color: #57AF4A;
+  font-weight: 600;
+  background: #91FF681A;
+  border:2rpx solid rgba(87,175,74,1);
+}
+.typeView .lineView {
+  margin: 0 32rpx;
+  margin-top: 31rpx;
+  height: 1rpx;
+  background: #DEDEDE;
+}
+.rowView {
+  width: 100%;
+  background: white;
+  display: flex;
+}
+.rowContentView {
+  flex: 1;
+  margin: 0 32rpx;
+  border-bottom: 1rpx solid #DEDEDE;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.rowContentView .title {
+  font-size: 32rpx;
+  font-weight: 600;
+  flex-shrink: 0;
+  padding: 32rpx 0;
+  min-width: 200rpx;
+}
+.rowContentView input {
+  flex: 1;
+  font-size: 28rpx;
+}
+.rowContentView .icon {
+  width: 32rpx;
+  margin-left: 16rpx;
+}
+.chooseAreaView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.chooseAreaView .header {
+  width: 100%;
+  background: #F9FAFB;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.chooseAreaView .header .closeIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 34rpx;
+}
+.closeIcon .icon {
+  width: 22rpx;
+}
+.chooseAreaView .header .title {
+  font-size: 32rpx;
+  padding: 26rpx 0;
+}
+.chooseAreaView .header .confirmBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #57AF4A;
+  font-size: 32rpx;
+  padding: 0 32rpx;
+}
+.chooseAreaView .content {
+  width: 100%;
+  height: 624rpx;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.content .valueView {
+  padding: 0 32rpx;
+}
+.valueView .valueContentView {
+  position: relative;
+  padding: 26rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #EAEAEA;
+}
+.valueView .valueItem {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.valueView .valueItemSel {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #57AF4A;
+}
+.valueView .lineView {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 96rpx;
+  height: 4rpx;
+  background: #57AF4A;
+}
+.listView {
+  margin-top: 1rpx;
+  width: 100%;
+  display: flex;
+  flex: 1;
+}
+.listItem {
+  margin-top: 1rpx;
+  display: flex;
+  width: 100%;
+  background: white;
+}
+.listItemContent {
+  flex: 1;
+  font-size: 32rpx;
+  margin: 0 32rpx;
+  padding: 26rpx 0;
+  border-bottom: 1rpx solid #EAEAEA;
+}
+.listItemContentSel {
+  font-weight: 500;
+  color: #57AF4A;
+}
+.changeSupplierView {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.changeSupplierView .header {
+  width: 100%;
+  background: #F9FAFB;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.changeSupplierView .header .closeIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 34rpx;
+}
+.closeIcon .icon {
+  width: 22rpx;
+}
+.changeSupplierView .header .title {
+  font-size: 32rpx;
+  padding: 26rpx 0;
+}
+.changeSupplierView .header .confirmBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #57AF4A;
+  font-size: 32rpx;
+  padding: 0 32rpx;
+}
+.changeSupplierView .content {
+  width: 100%;
+  height: 624rpx;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="listView">
+      <scroll-view class="listContentView" scroll-y >
+        <view class="typeView">
+          <view class="title">请选择供应商类型</view>
+          <view class="tagsView">
+            <view class="tagItem tagItemSel" wx:for="{{10}}" wx:key="self">批发市场</view>
+          </view>
+          <view class="lineView" />
+        </view>
+        <view class="rowView">
+          <view class="rowContentView">
+            <view class="title">供应商名称：</view>
+            <input placeholder="请填写名称">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="rowContentView">
+            <view class="title">负责人：</view>
+            <input placeholder="请填写负责人">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="rowContentView">
+            <view class="title">联系方式：</view>
+            <input placeholder="请填写电话">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="rowContentView" @tap="chooseAreaAction()">
+            <view class="title">选择区域：</view>
+            <input placeholder="请选择区域" disabled>
+            <image class="icon" mode="widthFix" src="/images/icon_black_arrow_16.png">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="rowContentView">
+            <view class="title">详细地址：</view>
+            <input placeholder="请填写街道门牌、楼层房间号等信息">
+          </view>
+        </view>
+        <view class="rowView">
+          <view class="rowContentView" @tap="chooseVarietyAction()">
+            <view class="title">经营品种：</view>
+            <input placeholder="请选择" disabled>
+            <image class="icon" mode="widthFix" src="/images/icon_black_arrow_16.png">
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="saveBtn">保存</view>
+    <van-popup show="{{ chooseAreaViewShow }}" position="bottom">
+      <view class="chooseAreaView">
+        <view class="header">
+          <view class="closeIcon" @tap="closeChooseAreaAction()">
+            <image class="icon" mode="widthFix" src="/images/icon_actionsheet_closed_12.png" />
+          </view>
+          <view class="title">区域</view>
+          <view class="confirmBtn">确定</view>
+        </view>
+        <view class="content">
+          <view class="valueView">
+            <view class="valueContentView">
+              <view class="valueItemSel">辽宁省</view>
+              <view class="valueItem">沈阳市</view>
+              <view class="valueItem">皇姑区</view>
+              <view class="lineView" />
+            </view>
+          </view>
+          <scroll-view scroll-y class="listView">
+            <view class="listItem" wx:for="{{10}}" wx:key="self">
+              <view class="listItemContent">
+                新城区
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-popup>
+    <van-popup show="{{ changeChooseVarietyViewShow }}" position="bottom">
+      <view class="changeSupplierView">
+        <view class="header">
+          <view class="closeIcon" @tap="closeVarietyAction()">
+            <image class="icon" mode="widthFix" src="/images/icon_actionsheet_closed_12.png" />
+          </view>
+          <view class="title">经营品种</view>
+          <view class="confirmBtn">确定</view>
+        </view>
+        <view class="content">
+          <scroll-view scroll-y class="listView">
+            <view class="listItem" wx:for="{{10}}" wx:key="self">
+              <view class="listItemContent listItemContentSel">
+                新城区
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-popup>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class SupplierEdit extends wepy.page {
+    config = {
+      "usingComponents": {
+        "van-popup": "../../components/van/popup"
+      },
+      navigationBarTitleText: '修改信息'
+    }
+    components = {
+    }
+    data = {
+      chooseAreaViewShow: false,
+      changeChooseVarietyViewShow: false
+    }
+    computed = {
+    }
+    methods = {
+      chooseAreaAction: function() {
+        this.chooseAreaViewShow = true
+      },
+      closeChooseAreaAction: function() {
+        this.chooseAreaViewShow = false
+      },
+      chooseVarietyAction: function() {
+        this.changeChooseVarietyViewShow = true
+      },
+      closeVarietyAction: function() {
+        this.changeChooseVarietyViewShow = false
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

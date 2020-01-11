@@ -1,0 +1,30 @@
+<style scoped>
+</style>
+<template>
+  <view class="container">
+    <orderList />
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import OrderList from "../../components/orderList";
+
+  export default class Tab2 extends wepy.page {
+    config = {
+    }
+    components = {
+      orderList: OrderList
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

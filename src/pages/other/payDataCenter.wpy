@@ -1,0 +1,45 @@
+<style scoped>
+</style>
+<template>
+  <view class="container">
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class PayDataCenter extends wepy.page {
+    config = {
+      navigationBarTitleText: '付款统计',
+      usingComponents: {
+        'van-tab': '../../components/van/tab',
+        'van-tabs': '../../components/van/tabs',
+        'van-popup': '../../components/van/popup',
+        'van-datetime-picker': '../../components/van/datetime-picker/index'
+      }
+    }
+    components = {
+    }
+    data = {
+      active: 0,
+      changeDayViewShow: false,
+      currentYear: 0,
+      currentMonth: 0,
+      currentDate: new Date().getTime(),
+      maxDate: new Date().getTime()
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+      var timestamp = Date.parse(new Date());
+      var date = new Date(timestamp);
+
+      this.currentYear = date.getFullYear()
+      this.currentMonth = date.getMonth() + 1
+    }
+  }
+</script>

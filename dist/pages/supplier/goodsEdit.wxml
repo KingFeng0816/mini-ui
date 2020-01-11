@@ -1,0 +1,153 @@
+
+  <view class="container _f1a4f6e">
+    <view class="listView _f1a4f6e">
+      <scroll-view class="listContentView _f1a4f6e" scroll-y>
+        <view class="rowView _f1a4f6e" bindtap="toChooseType" data-wpytochoosetype-a="">
+          <view class="rowContentView _f1a4f6e">
+            <view class="title _f1a4f6e">选择品类：</view>
+            <input placeholder="请选择" disabled class="_f1a4f6e"/>
+            <image class="icon _f1a4f6e" mode="widthFix" src="/images/icon_black_arrow_16.png"/>
+          </view>
+        </view>
+        <view class="rowView _f1a4f6e">
+          <view class="rowContentView _f1a4f6e">
+            <view class="title _f1a4f6e">商品名称：</view>
+            <input placeholder="如：黄心大土豆" class="_f1a4f6e"/>
+          </view>
+        </view>
+        <view class="rowView _f1a4f6e">
+          <view class="rowContentView _f1a4f6e">
+            <view class="title _f1a4f6e">俗称：</view>
+            <input placeholder="如：马铃薯" class="_f1a4f6e"/>
+          </view>
+        </view>
+        <view class="rowView _f1a4f6e">
+          <view class="rowContentView _f1a4f6e">
+            <view class="title _f1a4f6e">简称：</view>
+            <input placeholder="如：土豆" class="_f1a4f6e"/>
+          </view>
+        </view>
+        <view class="rowView _f1a4f6e">
+          <view class="rowContentView _f1a4f6e">
+            <view class="title _f1a4f6e">俗称：</view>
+            <input placeholder="如：马铃薯" class="_f1a4f6e"/>
+          </view>
+        </view>
+        <view class="rowView _f1a4f6e">
+          <view class="rowContentView _f1a4f6e" bindtap="choosePreAction" data-wpychoosepreaction-a="">
+            <view class="title _f1a4f6e">是否为预包装食品</view>
+            <input placeholder="请选择" disabled class="_f1a4f6e"/>
+            <image class="icon _f1a4f6e" mode="widthFix" src="/images/icon_black_arrow_16.png"/>
+          </view>
+        </view>
+        <view class="rowView _f1a4f6e">
+          <view class="rowContentView _f1a4f6e" bindtap="chooseUnitAction" data-wpychooseunitaction-a="">
+            <view class="title _f1a4f6e">计量单位</view>
+            <input placeholder="请选择" disabled class="_f1a4f6e"/>
+            <image class="icon _f1a4f6e" mode="widthFix" src="/images/icon_black_arrow_16.png"/>
+          </view>
+        </view>
+        <view class="rowView _f1a4f6e">
+          <view class="titleView _f1a4f6e">商品图片</view>
+          <view class="imagesView _f1a4f6e">
+            <view class="imageView _f1a4f6e"  wx:for="{{9}}" wx:key="self">
+              <image class="thumb _f1a4f6e" mode="widthFix" src="/images/img_add-picture_104.png"/>
+              <image class="closeBtn _f1a4f6e" mode="widthFix" src="/images/icon_clean_16.png"/>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="saveBtn _f1a4f6e">添加</view>
+    <!-- 选择品类弹窗 -->
+    <van-popup  bind:close="onChooseTypeClose" show="{{ chooseTypeShow }}" position="bottom" class="_f1a4f6e">
+      <view class="changeChooseTypeView _f1a4f6e" style="height: {{pageHeight * 0.8}}px">
+        <view class="leftView _f1a4f6e">
+          <scroll-view scroll-y class="scrollView _f1a4f6e">
+            <view class="leftItemSel _f1a4f6e">
+              <view class="title _f1a4f6e">蔬菜类</view>
+              <image class="icon _f1a4f6e" mode="widthFix" src="/images/icon_unfold_16.png"/>
+            </view>
+            <view class="leftSubItem _f1a4f6e">
+              <view class="title _f1a4f6e">根茎类</view>
+            </view>
+            <view class="leftSubItemSel _f1a4f6e">
+              <view class="title _f1a4f6e">叶菜类</view>
+            </view>
+            <view class="leftSubItem _f1a4f6e">
+              <view class="title _f1a4f6e">根茎类</view>
+            </view>
+            <view class="leftItem _f1a4f6e"  wx:for="{{10}}" wx:key="self">
+              <view class="title _f1a4f6e">蔬菜类</view>
+              <image class="icon _f1a4f6e" mode="widthFix" src="/images/icon_unfold_16.png"/>
+            </view>
+          </scroll-view>
+        </view>
+        <view class="rightView _f1a4f6e">
+          <view class="title _f1a4f6e">叶菜类</view>
+          <view class="content _f1a4f6e">
+            <scroll-view scroll-y class="scrollView _f1a4f6e">
+              <view class="goodsView _f1a4f6e"  wx:for="{{10}}" wx:key="self">
+                <view class="thumbView _f1a4f6e">
+                  <image class="thumb _f1a4f6e" src=""/>
+                  <image class="icon _f1a4f6e" mode="widthFix" src="/images/img_superscript_hg.png"/>
+                </view>
+                <view class="name _f1a4f6e">大白菜</view>
+                <image class="addBtn _f1a4f6e" mode="widthFix" src="/images/icon_add_24px.png"/>
+              </view>
+            </scroll-view>
+          </view>
+        </view>
+      </view>
+    </van-popup>
+    <!-- 选择是否为预包装食品弹窗 -->
+    <van-popup show="{{ choosePreShow }}" position="bottom"  bind:close="closeChoosePreAction" class="_f1a4f6e">
+      <view class="choosePreView _f1a4f6e">
+        <view class="header _f1a4f6e">
+          <view class="closeIcon _f1a4f6e" bindtap="closeChoosePreAction" data-wpyclosechoosepreaction-a="">
+            <image class="icon _f1a4f6e" mode="widthFix" src="/images/icon_actionsheet_closed_12.png"/>
+          </view>
+          <view class="title _f1a4f6e">是否为预包装食品</view>
+        </view>
+        <view class="content _f1a4f6e">
+          <view class="preRow _f1a4f6e">
+            <view class="titleSel _f1a4f6e">
+              是
+            </view>
+            <image class="icon _f1a4f6e" mode="widthFix" src="/images/Icon_Outlined_done_24.png"/>
+          </view>
+          <view class="preRow preBorder _f1a4f6e">
+            <view class="title _f1a4f6e">
+              否
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-popup>
+    <!-- 选择计量单位弹窗 -->
+    <van-popup show="{{ chooseUnitShow }}" position="bottom"  bind:close="closeChooseUnitAction" class="_f1a4f6e">
+      <view class="chooseUnitView _f1a4f6e" style="height: {{pageHeight * 0.5}}px">
+        <view class="header _f1a4f6e">
+          <view class="closeIcon _f1a4f6e" bindtap="closeChooseUnitAction" data-wpyclosechooseunitaction-a="">
+            <image class="icon _f1a4f6e" mode="widthFix" src="/images/icon_actionsheet_closed_12.png"/>
+          </view>
+          <view class="title _f1a4f6e">计量单位</view>
+        </view>
+        <view class="content _f1a4f6e">
+          <scroll-view scroll-y class="scrollView _f1a4f6e">
+            <view class="preRow _f1a4f6e">
+              <view class="titleSel _f1a4f6e">
+                公斤
+              </view>
+              <image class="icon _f1a4f6e" mode="widthFix" src="/images/Icon_Outlined_done_24.png"/>
+            </view>
+            <view class="preRow preBorder _f1a4f6e" wx:for="{{10}}" wx:key="self">
+              <view class="title _f1a4f6e">
+                斤
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-popup>
+  </view>

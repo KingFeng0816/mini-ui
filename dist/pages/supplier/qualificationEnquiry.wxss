@@ -1,0 +1,15 @@
+
+.container._cc29962 {
+  min-height: 100%;
+  background: white;
+  padding: 30rpx 0;
+}
+.title._cc29962 {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 8rpx;
+}
+.thumb._cc29962 {
+  width: 686rpx;
+  margin-bottom: 24rpx;
+}

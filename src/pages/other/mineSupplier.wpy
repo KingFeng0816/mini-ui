@@ -1,0 +1,34 @@
+<style scoped>
+</style>
+<template>
+  <view class="container">
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import SupplierRowView from "../../components/supplierRowView";
+
+  export default class MineSupplier extends wepy.page {
+    config = {
+      navigationBarTitleText: '我的供应商'
+    }
+    components = {
+      orderItemView: SupplierRowView
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+      selectSupplier: function(item) {
+        console.log('selectSupplier: ', item)
+        this.$navigate({url:"../purchaser/chooseGoodsFromSupplier"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

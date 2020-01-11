@@ -1,0 +1,32 @@
+<style scoped>
+</style>
+<template>
+  <view class="container">
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  var WxCharts = require('../../utils/wxcharts-min.js')
+  var ringChart = null
+
+  export default class DataAnalysis extends wepy.page {
+    config = {
+      navigationBarTitleText: '数据分析'
+    }
+    components = {
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+    }
+    onReady() {
+    }
+  }
+</script>

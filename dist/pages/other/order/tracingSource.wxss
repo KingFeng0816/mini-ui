@@ -1,0 +1,115 @@
+
+.container._e045015, page._e045015 {
+  height: 100%;
+}
+.topView._e045015 {
+  width: 100%;
+  height: 480rpx;
+}
+.videoView._e045015 {
+  width: 100%;
+  height: 100%;
+}
+.videoView video._e045015 {
+  width: 100%;
+  height: 100%;
+}
+.topView .content._e045015 {
+  background: #999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.topView .timeView._e045015 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12rpx 4rpx;
+  border-radius: 48rpx;
+  margin-top: 32rpx;
+  background: #FFFFFF94;
+}
+.topView .timeView .icon._e045015 {
+  width: 24rpx;
+  padding: 0 20rpx;
+}
+.topView .timeView .time._e045015 {
+  color: #57AF4A;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.topView .detailView._e045015 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.topView .detailView .name._e045015 {
+  color: white;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.topView .detailView .time._e045015 {
+  color: white;
+  font-size: 28rpx;
+  margin-top: 8rpx;
+}
+.topView .detailView .monitorBtn._e045015 {
+  color: white;
+  font-size: 28rpx;
+  font-weight: 600;
+  padding: 12rpx 48rpx;
+  border-radius: 64rpx;
+  background: #57AF4A;
+  margin-top: 32rpx;
+}
+.listView._e045015 {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  background: white;
+  padding: 16rpx 0;
+}
+.listView .content._e045015 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.listView .listItem._e045015 {
+  margin: 16rpx 32rpx;
+  padding: 40rpx 32rpx;
+  box-shadow: 0rpx 4rpx 20rpx 0rpx rgba(235,238,243,0.8);
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.listView .listItem .icon._e045015 {
+  width: 48rpx;
+  margin-right: 16rpx;
+}
+.listView .listItem .title._e045015 {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.listView .listItem .valueView._e045015 {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-left: auto;
+}
+.listView .listItem .valueView .text._e045015 {
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.listView .listItem .valueView .num._e045015 {
+  font-size: 64rpx;
+  font-weight: bold;
+}
+.listView .listItem .valueView .unit._e045015 {
+  font-size: 28rpx;
+}

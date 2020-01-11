@@ -1,0 +1,190 @@
+<style>
+@import "components/van/common/index.wxss";
+Page {
+  width: 100%;
+  height: 100%;
+  background: #F4F4F4;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.van-picker__cancel {
+  font-size: 32rpx !important;
+  color: black !important;
+}
+.van-picker__confirm {
+  font-size: 32rpx !important;
+  color: #57AF4A !important;
+  font-weight: 500 !important;
+}
+.van-picker__toolbar {
+  background: #F9FAFB !important;
+}
+.van-picker-column__item {
+  color: #CFCFCF !important;
+}
+.van-picker-column__item--selected {
+  color: #57AF4A !important;
+  font-weight: 600 !important;
+}
+.van-dialog {
+  border-radius: 24rpx !important;
+}
+.van-dialog__message {
+  padding: 64rpx 48rpx !important;
+}
+.van-dialog__message-text {
+  color: #353535 !important;
+  font-size: 34rpx !important;
+  font-weight: 500 !important;
+}
+.van-button__text {
+  font-size: 34rpx !important;
+  font-weight:500 !important;
+}
+.van-dialog__cancel,.van-dialog__confirm {
+  height: 110rpx !important;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.van-popup {
+  background: transparent !important;
+}
+</style>
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+import { setStore } from 'wepy-redux'
+import configStore from './store'
+
+const store = configStore()
+setStore(store)
+
+export default class extends wepy.app {
+  config = {
+    // 默认页面
+    pages: [
+      'pages/default/tab0',
+      'pages/default/tab1',
+      'pages/default/tab2',
+      'pages/default/tab3',
+      'pages/default/tab4'
+    ],
+    subPackages: [
+      {
+        // 其他
+        root: 'pages/other',
+        pages: [
+          'order/orderDetail',
+          'order/orderRealLocation',
+          'order/createOrder',
+          'smart/smartGenerateRawMaterials',
+          'smart/smartCreate',
+          'smart/smartDetailAll',
+          'smart/smartDetail',
+          'address/addressCenter',
+          'address/addressEditor',
+          'payDataCenter',
+          'helpCenter',
+          'mineSupplier',
+          'messageList',
+          'goodsDetail',
+          'order/tracingSource',
+          'needPay'
+        ],
+      },
+      {
+        // 供应商
+        root: 'pages/supplier',
+        pages: [
+          'searchFollow',
+          'supplierDetail',
+          'toFollow',
+          'qualificationEnquiry',
+          'incomingInquiry',
+          'incomingGoodsDetail',
+          'testReport',
+          'supplierCenter',
+          'supplierEdit',
+          'salesStatistics',
+          'inventoryOverview',
+          'dataAnalysis',
+          'priceMaintain',
+          'goodsEdit',
+          'quotation'
+        ],
+      },
+      {
+        // 采购商
+        root: 'pages/purchaser',
+        pages: [
+          'chooseGoodsFromSupplier',
+        ],
+      }
+    ],
+    tabBar: {
+      color: '#5E635A',
+      selectedColor: '#000000',
+      backgroundColor: '#FFFFFF',
+      list: [
+        {
+          'pagePath': 'pages/default/tab0',
+          'text': '首页',
+          'iconPath': 'images/icon_home_tabbar_Unchecked.png',
+          'selectedIconPath': 'images/icon_home_tabbar_Selected.png'
+        },
+        {
+          'pagePath': 'pages/default/tab1',
+          'text': '智慧订货',
+          'iconPath': 'images/icon_ai_tabbar_Unchecked.png',
+          'selectedIconPath': 'images/icon_ai_tabbar_selected.png'
+        },
+        {
+          'pagePath': 'pages/default/tab2',
+          'text': '订单',
+          'iconPath': 'images/icon_dd_tabbar_selected.png',
+          'selectedIconPath': 'images/icon_dd_tabbar_unchecked.png'
+        },
+        {
+          'pagePath': 'pages/default/tab3',
+          'text': '购物车',
+          'iconPath': 'images/icon_gwc_tabbar_unchecked.png',
+          'selectedIconPath': 'images/icon_gwc_tabbar_selected.png'
+        },
+        {
+          'pagePath': 'pages/default/tab4',
+          'text': '我的',
+          'iconPath': 'images/icon_me_tabbar_unchecked.png',
+          'selectedIconPath': 'images/icon_me_tabbar_selected.png'
+        }
+      ]
+    },
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: '智慧安鲜',
+      navigationBarTextStyle: 'black'
+    }
+  }
+
+  globalData = {
+    userInfo: null
+  }
+
+  constructor () {
+    super()
+    this.use('requestfix');
+    this.use('promisify');
+  }
+
+  onLaunch() {
+  }
+}
+</script>

@@ -1,0 +1,48 @@
+<style scoped>
+.container {
+  min-height: 100%;
+  background: white;
+  padding: 30rpx 0;
+}
+.title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 8rpx;
+}
+.thumb {
+  width: 686rpx;
+  margin-bottom: 24rpx;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="title">商品营业执照</view>
+    <image class="thumb" mode="widthFix" wx:for="{{images}}" wx:key="self" src="{{item}}" />
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class QualificationEnquiry extends wepy.page {
+    config = {
+      navigationBarTitleText: '资质查询'
+    }
+    components = {
+    }
+    data = {
+      images: [
+        "http://pimg.39.net/PictureLib/A/f76/20170125/org_905687.jpg",
+        "http://baoliao.oeeee.com/upload/2/2014-0/650XH/62df72e8-a41a-4386-973b-f8b93e98d8f0.jpg"
+      ]
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

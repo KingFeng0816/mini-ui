@@ -1,0 +1,82 @@
+<style scoped>
+.container {
+  min-height: 100%;
+  background: white;
+}
+.formView {
+  margin: 32rpx 0;
+  width: 686rpx;
+  display: flex;
+  flex-direction: column;
+  border-right: 1rpx solid black;
+}
+.titleRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solid black;
+  border-right: 0;
+  border-left: 0;
+}
+.normalRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid black;
+}
+.line0 {
+  width: 352rpx;
+  flex-shrink: 0;
+}
+.line1 {
+  width: 272rpx;
+  flex-shrink: 0;
+}
+.titleBlock {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.rowBlock {
+  font-size: 28rpx;
+}
+.titleBlock, .rowBlock {
+  padding: 18rpx 16rpx;
+  border-left: 1rpx solid black;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="formView">
+      <view class="titleRow">
+        <view class="line0 titleBlock">商品名称</view>
+        <view class="line1 titleBlock">商品数量</view>
+      </view>
+      <view class="normalRow" wx:for="{{10}}" wx:key="self">
+        <view class="line0 rowBlock">小汤山小白菜</view>
+        <view class="line1 rowBlock">50公斤</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class IncomingGoodsDetail extends wepy.page {
+    config = {
+      navigationBarTitleText: '货品明细'
+    }
+    components = {
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

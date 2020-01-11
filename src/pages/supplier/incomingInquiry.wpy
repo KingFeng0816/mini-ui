@@ -1,0 +1,129 @@
+<style scoped>
+.container {
+  padding: 8rpx 0;
+}
+.rowView {
+  width: 718rpx;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius:16rpx;
+  margin: 8rpx auto;
+}
+.titleView {
+  margin: 0 32rpx;
+  padding: 24rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #F4F4F4;
+}
+.titleView .title {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-right: 16rpx;
+}
+.titleView .showDetailBtn {
+  padding: 4rpx 24rpx;
+  font-size: 28rpx;
+  color: #5E635A;
+  border-radius: 32rpx;
+  border:2rpx solid rgba(94,99,90,1);
+}
+.listView {
+  margin: 0 32rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom:1rpx solid #EAEAEA;
+  padding-top: 12rpx;
+  padding-bottom: 10rpx;
+}
+.listView .listItemView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 18rpx 0;
+}
+.listItemView .title {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+.listItemView .showGoodsBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  font-size: 32rpx;
+  color: #57AF4A;
+}
+.showGoodsBtn .btnTitle {
+  margin-right: 8rpx;
+}
+.showGoodsBtn .icon {
+  width: 32rpx;
+}
+.rowView .moreView {
+  height: 88rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.rowView .moreView .title {
+  color: #9B9B9B;
+  font-size: 28rpx;
+  margin-right: 16rpx;
+}
+.rowView .moreView .icon {
+  width: 32rpx;
+}
+</style>
+<template>
+  <view class="container">
+    <view class="rowView" wx:for="{{5}}" wx:key="self">
+      <view class="titleView">
+        <view class="title">长安街智慧生鲜市场</view>
+        <view class="showDetailBtn">查看商家</view>
+      </view>
+      <view class="listView">
+        <view class="listItemView" wx:for="{{5}}" wx:key="self">
+          <view class="title">2019-12-27</view>
+          <view class="showGoodsBtn">
+            <view class="btnTitle" @tap="showGoodsDetail()">查看货品</view>
+            <image class="icon" mode="widthFix" src="/images/icon_green_arrow_16.png" />
+          </view>
+        </view>
+      </view>
+      <view class="moreView">
+        <view class="title">展开显示更多</view>
+        <image class="icon" mode="widthFix" src="/images/icon_unfold_16.png"/>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class IncomingInquiry extends wepy.page {
+    config = {
+      navigationBarTitleText: '来货查询'
+    }
+    components = {
+    }
+    data = {
+    }
+    computed = {
+    }
+    methods = {
+      showGoodsDetail: function() {
+        this.$navigate({url:"/pages/supplier/incomingGoodsDetail"})
+      }
+    }
+    events = {
+    }
+    onLoad() {
+    }
+  }
+</script>

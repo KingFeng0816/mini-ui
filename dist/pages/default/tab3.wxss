@@ -1,0 +1,3 @@
+@import "./../../components/supplierGoodsCenter.wxss";
+@import "./../../components/cart.wxss";
+
