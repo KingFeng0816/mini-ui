@@ -55,9 +55,9 @@
         </view>
       </view>
       <view class="listContent">
-        <view   @tap="selectSupplier()">
+        <view>
           <repeat wx:for="{{storeListData}}">
-            <supplierRowView :canshu1.sync="storeListData[index]"  bind:supplierRowViewTap="supplierRowViewTap" />
+            <supplierRowView :canshu1.sync="storeListData[index]" @sendmessage.user="supplierRowViewTap" />
           </repeat>
         </view>
       </view>
@@ -78,6 +78,7 @@
       supplierRowView: SupplierRowView
     }
     data = {
+      storeListDic:{},
       storeListData:[],
       bannerList:[],
       indicatorDots: true,
@@ -89,10 +90,6 @@
     computed = {
     }
     methods = {
-      selectSupplier: function(item) {
-        console.log('selectSupplier: ', item.canshu1)
-        this.$parent.$navigate({url:"/pages/purchaser/chooseGoodsFromSupplier?storeId="})
-      },
       testAction: function() {
         this.$parent.$navigate({url:"/pages/other/order/tracingSource"})
       },
@@ -101,7 +98,8 @@
         console.log(event.currentTarget.dataset.title);
       },
       supplierRowViewTap(e) {
-        console.log(e)
+          console.log(e)
+          this.$parent.$navigate({url:"/pages/purchaser/chooseGoodsFromSupplier?storeId="+e+"&detail="+JSON.stringify(this.storeListDic[e])})
       }
     };
     events = {
@@ -121,13 +119,20 @@
       GetStoreListData(function(myData) {
         console.log(myData.data.data);
         that.storeListData =myData.data.data;
+        for(var i =0 ; i<that.storeListData.length;i++)
+        {
+            var storeObj = myData.data.data[i];
+            that.storeListDic[storeObj.id] =storeObj;
+            console.log(that.storeListDic);
+        }
+
         that.$apply();
 
       });
 
 
-
     };
+
 
 
   }

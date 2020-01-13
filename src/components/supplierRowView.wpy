@@ -121,16 +121,17 @@
     }
     methods = {
       supplierRowViewTap(e) {
-        console.log(e.currentTarget.id)
-        var currentID = e.currentTarget.id
-        this.triggerEvent('supplierRowViewTap', {
-          currentID:currentID
-        }, {})
+        var currentID = e.currentTarget.id;
+        this.$emit("sendmessage",currentID)
+
       }
     }
     events = {
     }
     onLoad() {
     }
+
+
+
   }
 </script>

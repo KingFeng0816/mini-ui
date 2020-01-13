@@ -278,26 +278,26 @@
     <view class="topView">
       <view class="bgView" />
       <view class="introView">
-        <image class="logo" src="" />
+        <image class="logo" src="{{maydetail.storeLogoUrl}}" />
         <view class="detailView">
           <view class="titleView"> 
             <view class="title van-ellipsis">
-              文运街智慧生鲜市场文运街智慧生鲜市场
+              {{maydetail.storeName}}
             </view>
             <view class="detailBtn" @tap="showSupplierDetail()">详情</view>
           </view>
           <view class="locationView">
             <image class="icon" mode="widthFix" src="../../images/icon_address.png"/>
-            <view class="location van-ellipsis">湖南省衡阳石鼓区南起司前街湖南省衡阳石鼓区南起司前街</view>
+            <view class="location van-ellipsis">{{maydetail.storeAddress}}</view>
           </view>
           <view class="contact">
             <view class="name">
               <image class="icon" mode="widthFix" src="../../images/icon_people.png" />
-              <view class="desc van-ellipsis">这里是联系人姓名这里是联系人姓名</view>
+              <view class="desc van-ellipsis">{{maydetail.storeUserName}}</view>
             </view>
             <view class="tel">
               <image class="icon" mode="widthFix" src="../../images/icon_phone.png" />
-              <view class="desc van-ellipsis">这里是联系电话这里是联系电话</view>
+              <view class="desc van-ellipsis">{{maydetail.storeMobile}}</view>
             </view>
           </view>
         </view>
@@ -305,21 +305,22 @@
     </view>
     <view class="contentView">
       <scroll-view scroll-y class="leftView">
-        <view wx:for="{{classes}}" wx:key="self" class="{{selectedClass.id == item.id ? 'leftItemSel':'leftItem'}}" @tap="changeSelClass({{item}})">
-          {{item.title}}
+        <view wx:for="{{productList}}" wx:key="self" class="{{selectedClass.id == item.id ? 'leftItemSel':'leftItem'}}" @tap="changeSelClass({{item}})">
+          {{item.productTypeName}}
         </view>
       </scroll-view>
       <scroll-view scroll-y class="rightView">
-        <view class="header">{{selectedClass.title}}</view>
-        <view class="goodsView" wx:for="{{10}}" wx:key="self" @tap="showGoodsDetail()">
+        <view class="header">{{selectedClass.productTypeName}}</view>
+
+        <view class="goodsView" wx:for="{{selectedClass.data}}" wx:key="self" @tap="showGoodsDetail()">
           <view class="goodsImv">
-            <image class="thumb" src="" />
+            <image class="thumb" src="{{item.productImages.thumbnail}}" />
             <image class="icon" mode="widthFix" src="../../images/img_superscript_hg.png" />
           </view>
           <view class="intro">
-            <view class="title van-ellipsis">密云菠菜密云菠菜密云菠菜密云菠菜密云菠菜</view>
+            <view class="title van-ellipsis">{{item.productName}}</view>
             <view class="detail">
-              <view class="price">1.90元/斤</view>
+              <view class="price">{{item.productPrice}}元/{{item.productWeight}}</view>
               <view class="numView">
                 <image class="icon" mode="widthFix" src="../../images/icon_minus_24px.png" />
                 <view class="inputView">
@@ -348,13 +349,14 @@
 
 <script>
   import wepy from 'wepy'
-
+  import {GetStoreProductListData} from "../../store/actions/purchaser.js";
   export default class ChooseGoodsFromSupplier extends wepy.page {
     config = {
-    }
+    };
     components = {
-    }
+    };
     data = {
+      maydetail:{},
       classes: [
         {
           "id": 0,
@@ -373,13 +375,14 @@
           "title": "分类4"
         }
       ],
-      selectedClass: {
-        "id": 0,
-        "title": "分类1"
-      }
-    }
+      selectedClass: {},
+      productList:[]
+
+
+
+    };
     computed = {
-    }
+    };
     methods = {
       showSupplierDetail: function() {
         this.$navigate({url:"../supplier/supplierDetail"})
@@ -390,10 +393,30 @@
       showGoodsDetail: function() {
         this.$navigate({url:"../other/goodsDetail"})
       }
-    }
+    };
     events = {
+    };
+    onLoad(options) {
+
+        var _this = this;
+        var storeID = JSON.parse(options.storeId);
+        var object = JSON.parse(options.detail);
+
+        console.log(storeID);
+        console.log(object);
+        this.maydetail = object;
+        this.$apply();
+        //加载店铺列表数据
+        GetStoreProductListData(options.storeId,function(myData) {
+            console.log(myData.data);
+            console.log(myData.data.data);
+            _this.productList =myData.data.data;
+            _this.selectedClass = _this.productList[0];
+            _this.$apply();
+
+        });
+
     }
-    onLoad() {
-    }
+
   }
 </script>
