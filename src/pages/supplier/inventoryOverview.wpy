@@ -128,15 +128,15 @@
       </view>
       <view class="content">
         <view class="topViewItem">
-          <view class="num">0</view>
+          <view class="num">{{productVarietyNum}}</view>
           <view class="title">品种</view>
         </view>
         <view class="topViewItem">
-          <view class="num">0</view>
+          <view class="num">{{productTotalCostPrice}}</view>
           <view class="title">成本</view>
         </view>
         <view class="topViewItem">
-          <view class="num">0</view>
+          <view class="num">{{productWarnNum}}</view>
           <view class="title">预警商品数</view>
         </view>
       </view>
@@ -177,10 +177,10 @@
       <view class="formView">
         <scroll-view class="content" scroll-y>
           <view class="dataContent">
-            <view class="dataRow" wx:for="{{20}}" wx:key="self">
+            <view class="dataRow"wx:for="{{repertoryEntityList}}">
               <view class="dataBlock">
                 <view class="title">
-                  小白菜
+                  {{item.productName}}
                 </view>
               </view>
               <view class="dataBlock">
@@ -208,22 +208,39 @@
 
 <script>
   import wepy from 'wepy'
-
+  import {getProductRepertoryData} from "../../store/actions/inventoryOverview.js";
   export default class InventoryOverview extends wepy.page {
     config = {
       navigationBarTitleText: '库存概况'
-    }
+    };
     components = {
-    }
+    };
     data = {
-    }
+      productVarietyNum:0,
+      productTotalCostPrice:0,
+      productWarnNum:0,
+      repertoryEntityList:[],
+    };
     computed = {
-    }
+    };
     methods = {
-    }
+    };
     events = {
-    }
+    };
     onLoad() {
+      let currentThis = this;
+      getProductRepertoryData(function (result) {
+        console.log(result);
+        /*品种数量*/
+        currentThis.productVarietyNum = result.data.data.productVarietyNum;
+        /*品种总成本*/
+        currentThis.productTotalCostPrice = result.data.data.productTotalCostPrice;
+        /*预警商品数*/
+        currentThis.productWarnNum = result.data.data.productWarnNum;
+        /*商品列表*/
+        currentThis.repertoryEntityList = result.data.data.repertoryEntityList;
+        currentThis.$apply();
+      });
     }
   }
 </script>
